@@ -1,0 +1,77 @@
+======================================
+  PixelForge Development Setup
+======================================
+
+[0;32m✓[0m Node.js v20.19.5 detected
+[0;32m✓[0m Using pnpm
+
+======================================
+  Step 1: Installing Dependencies
+======================================
+
+[0;34mℹ[0m Dependencies already installed. Run 'pnpm install' to update.
+
+======================================
+  Step 2: Environment Configuration
+======================================
+
+[0;32m✓[0m .env file exists
+
+======================================
+  Step 3: Database Setup
+======================================
+
+Setting up database with Prisma...
+Generating Prisma Client...
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v5.22.0) to ./node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/@prisma/client in 56ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+
+Syncing database schema...
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+
+The database is already in sync with the Prisma schema.
+
+Running generate... (Use --skip-generate to skip the generators)
+[2K[1A[2K[GRunning generate... - Prisma Client
+[2K[1A[2K[G✔ Generated Prisma Client (v5.22.0) to ./node_modules/.pnpm/@prisma+client@5.22.
+0_prisma@5.22.0/node_modules/@prisma/client in 55ms
+
+[0;32m✓[0m Database configured
+
+======================================
+  Step 4: Starting Development Server
+======================================
+
+[0;34mStarting Next.js development server...[0m
+
+Application will be available at: [0;32mhttp://localhost:3000[0m
+
+[0;34mPress Ctrl+C to stop the server[0m
+
+
+> pixelforge@0.1.0 dev /Users/elizabethstein/Projects/pixelforge-test
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3001
+  - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 1509ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1540ms (540 modules)
+ ✓ Compiled in 100ms (265 modules)
+ GET / 200 in 1684ms
+ ○ Compiling /editor ...
+ ✓ Compiled /editor in 723ms (785 modules)
+ GET /editor 200 in 825ms
+[?25h

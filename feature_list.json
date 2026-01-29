@@ -1,0 +1,2808 @@
+[
+  {
+    "category": "functional",
+    "description": "Project initialization - Next.js app runs on port 3000",
+    "steps": [
+      "Step 1: Navigate to project directory",
+      "Step 2: Run 'npm run dev' command",
+      "Step 3: Verify app accessible at http://localhost:3000",
+      "Step 4: Verify no console errors in terminal"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Database connection - Prisma connects successfully",
+    "steps": [
+      "Step 1: Check DATABASE_URL environment variable set",
+      "Step 2: Run 'npx prisma db push' command",
+      "Step 3: Verify database schema created",
+      "Step 4: Verify no connection errors"
+    ],
+    "passes": true
+  },
+  {
+    "category": "style",
+    "description": "Dark mode theme - Default dark theme renders correctly",
+    "steps": [
+      "Step 1: Navigate to http://localhost:3000",
+      "Step 2: Take screenshot of home page",
+      "Step 3: Verify dark background (#0F0F0F)",
+      "Step 4: Verify text is readable with proper contrast"
+    ],
+    "passes": true
+  },
+  {
+    "category": "style",
+    "description": "Light mode theme - Light theme renders correctly",
+    "steps": [
+      "Step 1: Navigate to http://localhost:3000",
+      "Step 2: Click theme toggle button",
+      "Step 3: Take screenshot of home page",
+      "Step 4: Verify light background (#FFFFFF)",
+      "Step 5: Verify text is readable with proper contrast"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Theme persistence - Selected theme persists on page reload",
+    "steps": [
+      "Step 1: Navigate to http://localhost:3000",
+      "Step 2: Toggle theme to light mode",
+      "Step 3: Reload page",
+      "Step 4: Verify light mode still active"
+    ],
+    "passes": true
+  },
+  {
+    "category": "style",
+    "description": "Three-panel layout - Main layout displays correctly",
+    "steps": [
+      "Step 1: Navigate to editor page",
+      "Step 2: Take full screenshot",
+      "Step 3: Verify left sidebar visible with tools",
+      "Step 4: Verify center canvas area visible",
+      "Step 5: Verify right sidebar visible with tabs"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Panel resizing - Panels can be resized with drag handles",
+    "steps": [
+      "Step 1: Navigate to editor page",
+      "Step 2: Locate left panel resize handle",
+      "Step 3: Drag handle to resize panel",
+      "Step 4: Verify panel width changes",
+      "Step 5: Verify canvas adjusts accordingly"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Panel collapse - Panels can be collapsed and expanded",
+    "steps": [
+      "Step 1: Navigate to editor page",
+      "Step 2: Click collapse button on left panel",
+      "Step 3: Verify panel collapses",
+      "Step 4: Click expand button",
+      "Step 5: Verify panel expands to previous state"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Canvas initialization - Fabric.js canvas initializes correctly",
+    "steps": [
+      "Step 1: Navigate to editor page",
+      "Step 2: Wait for canvas to load",
+      "Step 3: Verify canvas element exists in DOM",
+      "Step 4: Verify canvas has transparent grid background",
+      "Step 5: Verify no JavaScript errors in console"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Canvas zoom in - Zoom in button increases canvas zoom",
+    "steps": [
+      "Step 1: Navigate to editor with an image loaded",
+      "Step 2: Note current zoom level",
+      "Step 3: Click zoom in button",
+      "Step 4: Verify zoom level increased",
+      "Step 5: Verify canvas content scaled appropriately"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Canvas zoom out - Zoom out button decreases canvas zoom",
+    "steps": [
+      "Step 1: Navigate to editor with an image loaded",
+      "Step 2: Set zoom to 200%",
+      "Step 3: Click zoom out button",
+      "Step 4: Verify zoom level decreased",
+      "Step 5: Verify canvas content scaled appropriately"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Canvas fit to screen - Fit button scales canvas to viewport",
+    "steps": [
+      "Step 1: Navigate to editor with an image loaded",
+      "Step 2: Zoom to 300%",
+      "Step 3: Click 'Fit' button",
+      "Step 4: Verify entire canvas visible in viewport",
+      "Step 5: Verify appropriate zoom level set"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Canvas pan - Space+drag pans the canvas",
+    "steps": [
+      "Step 1: Navigate to editor with an image loaded",
+      "Step 2: Zoom to 200%",
+      "Step 3: Hold space bar and drag canvas",
+      "Step 4: Verify canvas position changes",
+      "Step 5: Verify smooth panning motion"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "AI image generation modal - Generation modal opens correctly",
+    "steps": [
+      "Step 1: Navigate to editor page",
+      "Step 2: Click 'Generate' button or press Cmd+G",
+      "Step 3: Verify generation modal appears",
+      "Step 4: Verify prompt textarea visible and focused",
+      "Step 5: Verify model selector, style presets, and advanced options visible"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Text-to-image generation - Basic image generation completes successfully",
+    "steps": [
+      "Step 1: Open generation modal",
+      "Step 2: Enter prompt: 'A beautiful sunset over mountains'",
+      "Step 3: Select Flux Pro model",
+      "Step 4: Click Generate button",
+      "Step 5: Wait for generation to complete",
+      "Step 6: Verify generated image appears in preview",
+      "Step 7: Verify image quality is good",
+      "Step 8: Verify no error messages"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Generation progress tracking - Progress bar shows during generation",
+    "steps": [
+      "Step 1: Open generation modal",
+      "Step 2: Enter a prompt and click Generate",
+      "Step 3: Verify progress indicator appears",
+      "Step 4: Verify estimated time displayed",
+      "Step 5: Verify progress updates during generation",
+      "Step 6: Verify completion state shows when done"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Generation cancellation - Cancel button stops generation",
+    "steps": [
+      "Step 1: Start an image generation",
+      "Step 2: Wait 2 seconds",
+      "Step 3: Click Cancel button",
+      "Step 4: Verify generation stops",
+      "Step 5: Verify appropriate message shown",
+      "Step 6: Verify no image saved"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Negative prompts - Negative prompt affects generation",
+    "steps": [
+      "Step 1: Open generation modal",
+      "Step 2: Enter prompt: 'A cat'",
+      "Step 3: Expand negative prompt section",
+      "Step 4: Enter negative prompt: 'dogs, birds'",
+      "Step 5: Generate image",
+      "Step 6: Verify generated image contains cat, not dogs or birds"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Model selection - Different models can be selected",
+    "steps": [
+      "Step 1: Open generation modal",
+      "Step 2: Click model selector dropdown",
+      "Step 3: Verify Flux Pro, Flux Dev, SDXL, SD3 available",
+      "Step 4: Select SDXL model",
+      "Step 5: Verify model selected in UI",
+      "Step 6: Generate test image to verify model used"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Style presets - Style preset applies to generation",
+    "steps": [
+      "Step 1: Open generation modal",
+      "Step 2: Enter prompt: 'A house'",
+      "Step 3: Select 'Anime' style preset",
+      "Step 4: Generate image",
+      "Step 5: Verify generated image has anime style",
+      "Step 6: Verify style applied to generation parameters"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Aspect ratio selection - Different aspect ratios work correctly",
+    "steps": [
+      "Step 1: Open generation modal",
+      "Step 2: Select 16:9 aspect ratio",
+      "Step 3: Generate image",
+      "Step 4: Verify generated image has 16:9 aspect ratio",
+      "Step 5: Measure image dimensions to confirm"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Batch generation - Generate multiple variations at once",
+    "steps": [
+      "Step 1: Open generation modal",
+      "Step 2: Enter a prompt",
+      "Step 3: Set batch count to 4",
+      "Step 4: Click Generate",
+      "Step 5: Wait for completion",
+      "Step 6: Verify 4 different images generated",
+      "Step 7: Verify all displayed in preview grid"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Generation parameters - Steps slider affects generation",
+    "steps": [
+      "Step 1: Open generation modal",
+      "Step 2: Expand advanced options",
+      "Step 3: Set steps to 50",
+      "Step 4: Generate image",
+      "Step 5: Verify generation takes appropriate time",
+      "Step 6: Verify quality reflects step count"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Guidance scale - Guidance scale parameter works",
+    "steps": [
+      "Step 1: Open generation modal",
+      "Step 2: Enter prompt",
+      "Step 3: Set guidance scale to 15",
+      "Step 4: Generate image",
+      "Step 5: Verify image adheres closely to prompt"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Seed control - Same seed produces same image",
+    "steps": [
+      "Step 1: Open generation modal",
+      "Step 2: Enter prompt: 'A tree'",
+      "Step 3: Set seed to 12345",
+      "Step 4: Generate image and save result",
+      "Step 5: Generate again with same seed",
+      "Step 6: Verify both images are identical"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Use generated image - Add generated image to canvas",
+    "steps": [
+      "Step 1: Generate an image",
+      "Step 2: Click 'Use' button on generated image",
+      "Step 3: Verify image added to canvas",
+      "Step 4: Verify new layer created in layers panel",
+      "Step 5: Verify layer thumbnail shows image"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Save generated image - Save image to library",
+    "steps": [
+      "Step 1: Generate an image",
+      "Step 2: Click 'Save' button",
+      "Step 3: Navigate to image library",
+      "Step 4: Verify image appears in library",
+      "Step 5: Verify prompt and metadata preserved"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Regenerate image - Regenerate with same prompt",
+    "steps": [
+      "Step 1: Generate an image",
+      "Step 2: Click 'Regenerate' button",
+      "Step 3: Verify new generation starts with same prompt",
+      "Step 4: Verify all parameters preserved",
+      "Step 5: Verify new image generated"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Download generated image - Download works with metadata",
+    "steps": [
+      "Step 1: Generate an image",
+      "Step 2: Click 'Download' button",
+      "Step 3: Verify file downloads",
+      "Step 4: Open file and verify image quality",
+      "Step 5: Check EXIF data contains prompt and settings"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Generation queue - Multiple generations queue properly",
+    "steps": [
+      "Step 1: Start first generation",
+      "Step 2: Immediately start second generation",
+      "Step 3: Start third generation",
+      "Step 4: Verify all three appear in queue",
+      "Step 5: Verify they complete in order",
+      "Step 6: Verify queue UI updates correctly"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Generation cost estimation - Cost displayed before generating",
+    "steps": [
+      "Step 1: Open generation modal",
+      "Step 2: Select Flux Pro model",
+      "Step 3: Verify cost estimate displayed",
+      "Step 4: Change to SDXL model",
+      "Step 5: Verify cost estimate updates",
+      "Step 6: Verify cost accurate based on model pricing"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Prompt history - Recent prompts are saved",
+    "steps": [
+      "Step 1: Generate image with prompt 'sunset'",
+      "Step 2: Close modal",
+      "Step 3: Open generation modal again",
+      "Step 4: Click prompt history dropdown",
+      "Step 5: Verify 'sunset' prompt appears in history",
+      "Step 6: Click on history item to reuse prompt"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Favorite prompts - Prompts can be favorited",
+    "steps": [
+      "Step 1: Generate image with a prompt",
+      "Step 2: Click favorite icon on prompt",
+      "Step 3: Navigate to favorites",
+      "Step 4: Verify prompt appears in favorites list",
+      "Step 5: Unfavorite and verify removed"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Image upload via drag and drop - Drop image onto canvas",
+    "steps": [
+      "Step 1: Navigate to editor",
+      "Step 2: Drag an image file from desktop",
+      "Step 3: Drop onto canvas area",
+      "Step 4: Verify image appears on canvas",
+      "Step 5: Verify new layer created"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Image upload via file input - Browse and select image",
+    "steps": [
+      "Step 1: Navigate to editor",
+      "Step 2: Click 'Upload Image' button",
+      "Step 3: Select image from file picker",
+      "Step 4: Verify image loads to canvas",
+      "Step 5: Verify proper layer created"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Large image handling - 4K images load without issues",
+    "steps": [
+      "Step 1: Navigate to editor",
+      "Step 2: Upload 4K resolution image (3840x2160)",
+      "Step 3: Verify image loads successfully",
+      "Step 4: Verify canvas remains responsive",
+      "Step 5: Verify zoom and pan work smoothly",
+      "Step 6: Verify no memory errors"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Layer creation - New layers can be added",
+    "steps": [
+      "Step 1: Navigate to editor with image loaded",
+      "Step 2: Click 'Add Layer' button in layers panel",
+      "Step 3: Verify new blank layer created",
+      "Step 4: Verify layer appears in layers list",
+      "Step 5: Verify layer selected by default"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Layer visibility toggle - Show/hide layers",
+    "steps": [
+      "Step 1: Load image to canvas (creates layer)",
+      "Step 2: Click eye icon on layer",
+      "Step 3: Verify layer hidden on canvas",
+      "Step 4: Click eye icon again",
+      "Step 5: Verify layer visible again"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Layer lock - Locked layers cannot be edited",
+    "steps": [
+      "Step 1: Load image to canvas",
+      "Step 2: Click lock icon on layer",
+      "Step 3: Try to select and move layer",
+      "Step 4: Verify layer cannot be moved",
+      "Step 5: Unlock and verify editing works"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Layer opacity - Opacity slider affects layer transparency",
+    "steps": [
+      "Step 1: Load image to canvas",
+      "Step 2: Select layer in layers panel",
+      "Step 3: Adjust opacity slider to 50%",
+      "Step 4: Verify layer becomes semi-transparent",
+      "Step 5: Set to 0% and verify layer invisible",
+      "Step 6: Set to 100% and verify fully opaque"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Layer blend modes - Blend modes apply correctly",
+    "steps": [
+      "Step 1: Create two layers with overlapping images",
+      "Step 2: Select top layer",
+      "Step 3: Open blend mode dropdown",
+      "Step 4: Select 'Multiply' blend mode",
+      "Step 5: Verify visual effect applied",
+      "Step 6: Test other modes (Screen, Overlay)",
+      "Step 7: Verify each produces expected visual result"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Layer reordering - Drag to reorder layers",
+    "steps": [
+      "Step 1: Create three layers with different images",
+      "Step 2: Note initial layer order",
+      "Step 3: Drag bottom layer to top",
+      "Step 4: Verify layer order changes in panel",
+      "Step 5: Verify canvas z-order updates",
+      "Step 6: Verify previously hidden elements now visible"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Layer duplication - Duplicate layer creates copy",
+    "steps": [
+      "Step 1: Load image to canvas",
+      "Step 2: Select layer",
+      "Step 3: Press Cmd+D or click duplicate button",
+      "Step 4: Verify new layer created",
+      "Step 5: Verify new layer identical to original",
+      "Step 6: Verify independent editing possible"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Layer deletion - Delete layer with confirmation",
+    "steps": [
+      "Step 1: Create a layer",
+      "Step 2: Select layer",
+      "Step 3: Press Delete key",
+      "Step 4: Verify layer removed from panel",
+      "Step 5: Verify content removed from canvas",
+      "Step 6: Verify can undo deletion"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Layer grouping - Multiple layers can be grouped",
+    "steps": [
+      "Step 1: Create three layers",
+      "Step 2: Select all three layers (Cmd+click)",
+      "Step 3: Click 'Group' button or Cmd+G",
+      "Step 4: Verify group created in layers panel",
+      "Step 5: Verify layers nested under group",
+      "Step 6: Verify group can be collapsed/expanded"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Layer ungrouping - Groups can be ungrouped",
+    "steps": [
+      "Step 1: Create a layer group with layers",
+      "Step 2: Select group",
+      "Step 3: Click 'Ungroup' or Cmd+Shift+G",
+      "Step 4: Verify layers extracted from group",
+      "Step 5: Verify group removed",
+      "Step 6: Verify layers maintain positions"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Layer search - Search filters layer list",
+    "steps": [
+      "Step 1: Create multiple layers with different names",
+      "Step 2: Name one layer 'Background'",
+      "Step 3: Type 'Back' in layer search box",
+      "Step 4: Verify only matching layers shown",
+      "Step 5: Clear search and verify all layers return"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Layer thumbnails - Thumbnails update with changes",
+    "steps": [
+      "Step 1: Load image to canvas",
+      "Step 2: Note layer thumbnail in panel",
+      "Step 3: Draw on layer with brush tool",
+      "Step 4: Verify thumbnail updates to show changes",
+      "Step 5: Apply filter and verify thumbnail updates again"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Selection tool - Rectangle selection works",
+    "steps": [
+      "Step 1: Select rectangle selection tool",
+      "Step 2: Draw rectangle on canvas",
+      "Step 3: Verify selection marquee appears",
+      "Step 4: Verify selection can be moved",
+      "Step 5: Verify selection can be cleared"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Ellipse selection - Circular selection works",
+    "steps": [
+      "Step 1: Select ellipse selection tool",
+      "Step 2: Draw ellipse on canvas",
+      "Step 3: Verify circular selection marquee appears",
+      "Step 4: Verify selection accurate to drawn shape",
+      "Step 5: Press Delete to delete selected area"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Move tool - Objects can be moved on canvas",
+    "steps": [
+      "Step 1: Load image to canvas",
+      "Step 2: Select Move tool (press V)",
+      "Step 3: Click and drag image",
+      "Step 4: Verify image moves smoothly",
+      "Step 5: Release and verify position saved"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Transform tool - Scale with aspect ratio lock",
+    "steps": [
+      "Step 1: Load image to canvas",
+      "Step 2: Press Cmd+T for transform",
+      "Step 3: Hold Shift and drag corner handle",
+      "Step 4: Verify aspect ratio maintained",
+      "Step 5: Release Shift and verify free scaling works",
+      "Step 6: Press Enter to apply transform"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Rotation - Objects can be rotated",
+    "steps": [
+      "Step 1: Load image to canvas",
+      "Step 2: Enter transform mode (Cmd+T)",
+      "Step 3: Hover near corner until rotation cursor appears",
+      "Step 4: Drag to rotate image",
+      "Step 5: Verify smooth rotation",
+      "Step 6: Verify angle displayed during rotation"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Flip horizontal - Flip image horizontally",
+    "steps": [
+      "Step 1: Load image to canvas",
+      "Step 2: Select image layer",
+      "Step 3: Click Edit menu > Flip Horizontal",
+      "Step 4: Verify image flipped along vertical axis",
+      "Step 5: Verify can undo flip"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Flip vertical - Flip image vertically",
+    "steps": [
+      "Step 1: Load image to canvas",
+      "Step 2: Select image layer",
+      "Step 3: Click Edit menu > Flip Vertical",
+      "Step 4: Verify image flipped along horizontal axis",
+      "Step 5: Verify can undo flip"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Crop tool - Crop image to selection",
+    "steps": [
+      "Step 1: Load image to canvas",
+      "Step 2: Select Crop tool (press C)",
+      "Step 3: Draw crop region",
+      "Step 4: Adjust crop handles to desired area",
+      "Step 5: Press Enter to apply crop",
+      "Step 6: Verify image cropped to selection",
+      "Step 7: Verify original areas removed"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Crop with preset ratios - Use 16:9 crop ratio",
+    "steps": [
+      "Step 1: Select Crop tool",
+      "Step 2: Select 16:9 ratio from presets",
+      "Step 3: Draw crop region",
+      "Step 4: Verify crop maintains 16:9 aspect ratio",
+      "Step 5: Apply crop and verify dimensions correct"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Brush tool - Basic brush drawing works",
+    "steps": [
+      "Step 1: Create new blank layer",
+      "Step 2: Select Brush tool (press B)",
+      "Step 3: Set brush size to 20px",
+      "Step 4: Set color to red",
+      "Step 5: Draw strokes on canvas",
+      "Step 6: Verify red brush strokes appear",
+      "Step 7: Verify strokes smooth and accurate"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Brush size control - Brush size slider works",
+    "steps": [
+      "Step 1: Select Brush tool",
+      "Step 2: Set brush size to 5px",
+      "Step 3: Draw stroke and note width",
+      "Step 4: Set brush size to 50px",
+      "Step 5: Draw another stroke",
+      "Step 6: Verify second stroke significantly wider"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Brush opacity - Brush opacity control works",
+    "steps": [
+      "Step 1: Select Brush tool",
+      "Step 2: Set opacity to 50%",
+      "Step 3: Draw stroke",
+      "Step 4: Verify stroke semi-transparent",
+      "Step 5: Draw over same area",
+      "Step 6: Verify overlapping area darker"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Eraser tool - Eraser removes content",
+    "steps": [
+      "Step 1: Draw with brush on layer",
+      "Step 2: Select Eraser tool (press E)",
+      "Step 3: Set eraser size to 30px",
+      "Step 4: Erase part of drawing",
+      "Step 5: Verify erased area transparent",
+      "Step 6: Verify remaining content intact"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Shape tool - Rectangle shape can be drawn",
+    "steps": [
+      "Step 1: Select Rectangle shape tool",
+      "Step 2: Set fill color to blue",
+      "Step 3: Draw rectangle on canvas",
+      "Step 4: Verify blue rectangle appears",
+      "Step 5: Verify rectangle can be resized",
+      "Step 6: Verify corners remain sharp"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Circle shape - Circle shape can be drawn",
+    "steps": [
+      "Step 1: Select Circle shape tool",
+      "Step 2: Set fill color to green",
+      "Step 3: Draw circle on canvas",
+      "Step 4: Verify green circle appears",
+      "Step 5: Verify circle remains circular (not oval) when Shift held"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Text tool - Add text to canvas",
+    "steps": [
+      "Step 1: Select Text tool (press T)",
+      "Step 2: Click on canvas",
+      "Step 3: Type 'Hello World'",
+      "Step 4: Verify text appears on canvas",
+      "Step 5: Verify text layer created",
+      "Step 6: Click outside to finish editing"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Text formatting - Change font, size, and color",
+    "steps": [
+      "Step 1: Add text to canvas",
+      "Step 2: Select text layer",
+      "Step 3: Change font to Arial",
+      "Step 4: Change size to 48px",
+      "Step 5: Change color to red",
+      "Step 6: Verify all formatting changes applied",
+      "Step 7: Verify text remains editable"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Text alignment - Text alignment controls work",
+    "steps": [
+      "Step 1: Add multi-line text to canvas",
+      "Step 2: Select text layer",
+      "Step 3: Click left align button",
+      "Step 4: Verify text left-aligned",
+      "Step 5: Click center align",
+      "Step 6: Verify text centered",
+      "Step 7: Click right align and verify"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Text effects - Add shadow to text",
+    "steps": [
+      "Step 1: Add text to canvas",
+      "Step 2: Select text layer",
+      "Step 3: Open text effects panel",
+      "Step 4: Enable drop shadow",
+      "Step 5: Adjust shadow offset and blur",
+      "Step 6: Verify shadow appears on text",
+      "Step 7: Verify shadow adjustments work"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Undo functionality - Undo reverts last action",
+    "steps": [
+      "Step 1: Perform action (e.g., draw stroke)",
+      "Step 2: Press Cmd+Z",
+      "Step 3: Verify action reverted",
+      "Step 4: Perform multiple actions",
+      "Step 5: Press Cmd+Z multiple times",
+      "Step 6: Verify all actions undone in reverse order"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Redo functionality - Redo restores undone action",
+    "steps": [
+      "Step 1: Perform action and undo it",
+      "Step 2: Press Cmd+Shift+Z",
+      "Step 3: Verify action restored",
+      "Step 4: Verify canvas state matches pre-undo state"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "History panel - History shows action list",
+    "steps": [
+      "Step 1: Perform several actions (draw, move, rotate)",
+      "Step 2: Open History panel in right sidebar",
+      "Step 3: Verify all actions listed",
+      "Step 4: Click on earlier history state",
+      "Step 5: Verify canvas reverts to that state",
+      "Step 6: Verify can go forward again"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "History limit - 50 history states maintained",
+    "steps": [
+      "Step 1: Perform 55 distinct actions",
+      "Step 2: Check history panel",
+      "Step 3: Verify only 50 most recent states kept",
+      "Step 4: Verify oldest states pruned",
+      "Step 5: Verify undo works for all 50 states"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Background removal - AI removes background from image",
+    "steps": [
+      "Step 1: Load image with clear subject",
+      "Step 2: Select layer",
+      "Step 3: Click 'Remove Background' AI tool",
+      "Step 4: Wait for processing",
+      "Step 5: Verify background removed",
+      "Step 6: Verify subject edges clean",
+      "Step 7: Verify new layer created",
+      "Step 8: Verify original preserved"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Background removal progress - Progress shown during removal",
+    "steps": [
+      "Step 1: Start background removal",
+      "Step 2: Verify progress indicator appears",
+      "Step 3: Verify status message shown",
+      "Step 4: Verify UI remains responsive",
+      "Step 5: Verify completion notification appears"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Image upscaling 2x - Upscale increases resolution",
+    "steps": [
+      "Step 1: Load small image (512x512)",
+      "Step 2: Select layer",
+      "Step 3: Click 'Upscale' AI tool",
+      "Step 4: Select 2x option",
+      "Step 5: Wait for processing",
+      "Step 6: Verify result is 1024x1024",
+      "Step 7: Verify quality improved",
+      "Step 8: Verify details enhanced"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Image upscaling 4x - 4x upscaling works",
+    "steps": [
+      "Step 1: Load small image (256x256)",
+      "Step 2: Select Upscale AI tool",
+      "Step 3: Select 4x option",
+      "Step 4: Process image",
+      "Step 5: Verify result is 1024x1024",
+      "Step 6: Verify significant quality improvement"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "AI upscale preview - Preview before applying upscale",
+    "steps": [
+      "Step 1: Select image layer",
+      "Step 2: Open upscale tool",
+      "Step 3: Click 'Preview' button",
+      "Step 4: Verify preview generated",
+      "Step 5: Verify before/after comparison available",
+      "Step 6: Accept or cancel based on preview"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Auto enhance - One-click image enhancement",
+    "steps": [
+      "Step 1: Load underexposed image",
+      "Step 2: Select layer",
+      "Step 3: Click 'Auto Enhance' button",
+      "Step 4: Verify brightness improved",
+      "Step 5: Verify contrast enhanced",
+      "Step 6: Verify colors more vibrant",
+      "Step 7: Verify can undo enhancement"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Brightness adjustment - Brightness slider works",
+    "steps": [
+      "Step 1: Load image to canvas",
+      "Step 2: Open adjustments panel",
+      "Step 3: Move brightness slider to +50",
+      "Step 4: Verify image becomes brighter",
+      "Step 5: Move slider to -50",
+      "Step 6: Verify image becomes darker",
+      "Step 7: Reset to 0 and verify original restored"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Contrast adjustment - Contrast slider works",
+    "steps": [
+      "Step 1: Load image to canvas",
+      "Step 2: Open adjustments panel",
+      "Step 3: Increase contrast to +50",
+      "Step 4: Verify increased difference between light/dark areas",
+      "Step 5: Decrease to -50",
+      "Step 6: Verify image flatter, less contrast"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Saturation adjustment - Saturation affects color intensity",
+    "steps": [
+      "Step 1: Load colorful image",
+      "Step 2: Open adjustments panel",
+      "Step 3: Set saturation to +50",
+      "Step 4: Verify colors more vibrant",
+      "Step 5: Set saturation to -100",
+      "Step 6: Verify image becomes grayscale"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Hue rotation - Hue slider shifts colors",
+    "steps": [
+      "Step 1: Load colorful image",
+      "Step 2: Open adjustments panel",
+      "Step 3: Rotate hue by 180 degrees",
+      "Step 4: Verify colors shift (red becomes cyan, etc.)",
+      "Step 5: Verify shift uniform across image"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Temperature adjustment - Warm/cool color temperature",
+    "steps": [
+      "Step 1: Load image",
+      "Step 2: Open adjustments panel",
+      "Step 3: Increase temperature (warm)",
+      "Step 4: Verify image gains orange/yellow tones",
+      "Step 5: Decrease temperature (cool)",
+      "Step 6: Verify image gains blue tones"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Curves adjustment - RGB curves editor works",
+    "steps": [
+      "Step 1: Load image",
+      "Step 2: Open curves adjustment",
+      "Step 3: Create S-curve on RGB channel",
+      "Step 4: Verify increased contrast",
+      "Step 5: Adjust red channel curve",
+      "Step 6: Verify red tones affected independently"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Gaussian blur filter - Blur effect applies",
+    "steps": [
+      "Step 1: Load image",
+      "Step 2: Select blur filter",
+      "Step 3: Choose Gaussian blur",
+      "Step 4: Set radius to 10px",
+      "Step 5: Apply filter",
+      "Step 6: Verify image blurred uniformly",
+      "Step 7: Verify blur amount appropriate"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Sharpen filter - Sharpening enhances edges",
+    "steps": [
+      "Step 1: Load slightly soft image",
+      "Step 2: Apply sharpen filter",
+      "Step 3: Set amount to 50",
+      "Step 4: Verify edges become crisper",
+      "Step 5: Verify no oversharpening artifacts",
+      "Step 6: Verify can undo"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Vignette effect - Vignette darkens edges",
+    "steps": [
+      "Step 1: Load image",
+      "Step 2: Apply vignette effect",
+      "Step 3: Set amount to 70%",
+      "Step 4: Verify edges darkened",
+      "Step 5: Verify center remains bright",
+      "Step 6: Adjust feather and verify smooth transition"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Preset filters - Vintage filter applies correctly",
+    "steps": [
+      "Step 1: Load color image",
+      "Step 2: Open preset filters",
+      "Step 3: Select 'Vintage' preset",
+      "Step 4: Verify sepia tones applied",
+      "Step 5: Verify slight grain added",
+      "Step 6: Verify vignette effect present"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Black and white preset - B&W conversion works",
+    "steps": [
+      "Step 1: Load color image",
+      "Step 2: Select 'Black & White' preset",
+      "Step 3: Verify image converted to grayscale",
+      "Step 4: Verify tonal range preserved",
+      "Step 5: Verify can adjust intensity"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Filter strength control - Adjust filter intensity",
+    "steps": [
+      "Step 1: Apply any preset filter",
+      "Step 2: Locate strength/intensity slider",
+      "Step 3: Set to 50%",
+      "Step 4: Verify partial filter application",
+      "Step 5: Set to 100% and verify full strength",
+      "Step 6: Set to 0% and verify filter removed"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Custom filter saving - Save custom filter settings",
+    "steps": [
+      "Step 1: Apply multiple adjustments (brightness, contrast, saturation)",
+      "Step 2: Click 'Save as Preset' button",
+      "Step 3: Name preset 'MyFilter'",
+      "Step 4: Load new image",
+      "Step 5: Apply 'MyFilter' preset",
+      "Step 6: Verify all settings applied correctly"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Before/after comparison - Toggle shows original",
+    "steps": [
+      "Step 1: Load image and apply multiple adjustments",
+      "Step 2: Click 'Before/After' toggle button",
+      "Step 3: Verify original image shown",
+      "Step 4: Release and verify edited version shown",
+      "Step 5: Verify smooth transition"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Before/after slider - Drag to compare",
+    "steps": [
+      "Step 1: Apply adjustments to image",
+      "Step 2: Enable comparison slider mode",
+      "Step 3: Drag slider from left to right",
+      "Step 4: Verify left side shows original",
+      "Step 5: Verify right side shows edited",
+      "Step 6: Verify clean division line"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Project creation - New project can be created",
+    "steps": [
+      "Step 1: Navigate to projects page",
+      "Step 2: Click 'New Project' button",
+      "Step 3: Enter project name 'Test Project'",
+      "Step 4: Set canvas size to 1920x1080",
+      "Step 5: Click Create",
+      "Step 6: Verify project opens in editor",
+      "Step 7: Verify blank canvas with correct dimensions"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Project saving - Manual save with Cmd+S",
+    "steps": [
+      "Step 1: Create new project",
+      "Step 2: Add content to canvas",
+      "Step 3: Press Cmd+S",
+      "Step 4: Verify save notification appears",
+      "Step 5: Navigate away and return",
+      "Step 6: Verify content preserved"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Auto-save functionality - Project auto-saves every 30 seconds",
+    "steps": [
+      "Step 1: Create new project",
+      "Step 2: Make changes to canvas",
+      "Step 3: Wait 30 seconds without further action",
+      "Step 4: Verify auto-save indicator appears briefly",
+      "Step 5: Verify changes saved (check projects list)",
+      "Step 6: Verify no interruption to workflow"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Project loading - Projects load with all data intact",
+    "steps": [
+      "Step 1: Create project with multiple layers and edits",
+      "Step 2: Save project",
+      "Step 3: Navigate to projects list",
+      "Step 4: Click on project to open",
+      "Step 5: Verify all layers present",
+      "Step 6: Verify all edits preserved",
+      "Step 7: Verify canvas state correct",
+      "Step 8: Verify history available"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Project list view - All projects displayed with thumbnails",
+    "steps": [
+      "Step 1: Create multiple projects",
+      "Step 2: Navigate to projects list page",
+      "Step 3: Verify all projects shown as cards",
+      "Step 4: Verify each has thumbnail image",
+      "Step 5: Verify project names displayed",
+      "Step 6: Verify last edited dates shown"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Project search - Search finds projects by name",
+    "steps": [
+      "Step 1: Create projects named 'Sunset', 'Mountain', 'Beach'",
+      "Step 2: Navigate to projects list",
+      "Step 3: Type 'Sun' in search box",
+      "Step 4: Verify only 'Sunset' project shown",
+      "Step 5: Clear search",
+      "Step 6: Verify all projects return"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Project sorting - Sort projects by date",
+    "steps": [
+      "Step 1: Create multiple projects at different times",
+      "Step 2: Navigate to projects list",
+      "Step 3: Click sort dropdown",
+      "Step 4: Select 'Date Modified (Newest)'",
+      "Step 5: Verify projects sorted correctly",
+      "Step 6: Select 'Date Modified (Oldest)'",
+      "Step 7: Verify order reversed"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Project duplication - Duplicate creates independent copy",
+    "steps": [
+      "Step 1: Create project with content",
+      "Step 2: Save project",
+      "Step 3: Click 'Duplicate' button",
+      "Step 4: Verify new project created",
+      "Step 5: Verify name is 'Original Name (Copy)'",
+      "Step 6: Edit duplicate",
+      "Step 7: Verify original unchanged"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Project renaming - Rename project",
+    "steps": [
+      "Step 1: Open project or select in list",
+      "Step 2: Click rename button or right-click menu",
+      "Step 3: Enter new name 'Updated Project'",
+      "Step 4: Save changes",
+      "Step 5: Verify new name displayed in list",
+      "Step 6: Verify project still loads correctly"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Project deletion - Delete with confirmation",
+    "steps": [
+      "Step 1: Create test project",
+      "Step 2: Navigate to projects list",
+      "Step 3: Click delete button on project",
+      "Step 4: Verify confirmation dialog appears",
+      "Step 5: Confirm deletion",
+      "Step 6: Verify project removed from list",
+      "Step 7: Verify soft delete (can be recovered)"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Project versioning - Create snapshot version",
+    "steps": [
+      "Step 1: Open project",
+      "Step 2: Make significant changes",
+      "Step 3: Click 'Create Version' button",
+      "Step 4: Add description 'Major update'",
+      "Step 5: Navigate to versions panel",
+      "Step 6: Verify new version listed",
+      "Step 7: Verify can restore to this version"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Version restoration - Restore previous version",
+    "steps": [
+      "Step 1: Open project with multiple versions",
+      "Step 2: Make changes to current version",
+      "Step 3: Open versions panel",
+      "Step 4: Click 'Restore' on earlier version",
+      "Step 5: Confirm restoration",
+      "Step 6: Verify project state reverted",
+      "Step 7: Verify current changes lost (with warning)"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Project export JSON - Export project data",
+    "steps": [
+      "Step 1: Open project with content",
+      "Step 2: Click 'Export Project' button",
+      "Step 3: Select JSON format",
+      "Step 4: Click Export",
+      "Step 5: Verify file downloads",
+      "Step 6: Open file and verify contains all layer data",
+      "Step 7: Verify metadata included"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Project import - Import previously exported project",
+    "steps": [
+      "Step 1: Navigate to projects page",
+      "Step 2: Click 'Import Project' button",
+      "Step 3: Select exported JSON file",
+      "Step 4: Verify project loads",
+      "Step 5: Verify all layers restored",
+      "Step 6: Verify canvas dimensions correct",
+      "Step 7: Verify editable"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "PNG export - Export as PNG with transparency",
+    "steps": [
+      "Step 1: Create project with transparent background",
+      "Step 2: Add content",
+      "Step 3: Click Export (Cmd+E)",
+      "Step 4: Select PNG format",
+      "Step 5: Enable transparency option",
+      "Step 6: Click Download",
+      "Step 7: Verify PNG file downloads",
+      "Step 8: Verify transparency preserved"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "JPEG export with quality - Quality slider affects file size",
+    "steps": [
+      "Step 1: Open project",
+      "Step 2: Click Export",
+      "Step 3: Select JPEG format",
+      "Step 4: Set quality to 100",
+      "Step 5: Note estimated file size",
+      "Step 6: Set quality to 50",
+      "Step 7: Verify file size decreased",
+      "Step 8: Export and verify quality difference visible"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "WebP export - Export as WebP format",
+    "steps": [
+      "Step 1: Open project",
+      "Step 2: Click Export",
+      "Step 3: Select WebP format",
+      "Step 4: Set quality to 90",
+      "Step 5: Click Download",
+      "Step 6: Verify WebP file downloads",
+      "Step 7: Verify file smaller than equivalent PNG",
+      "Step 8: Verify quality maintained"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Export resolution scaling - Custom resolution export",
+    "steps": [
+      "Step 1: Open 1920x1080 project",
+      "Step 2: Click Export",
+      "Step 3: Select 'Custom Resolution'",
+      "Step 4: Enter 3840x2160 (2x scale)",
+      "Step 5: Verify aspect ratio maintained",
+      "Step 6: Export and verify output dimensions",
+      "Step 7: Verify quality scaled appropriately"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Export current layer only - Export single layer",
+    "steps": [
+      "Step 1: Create project with 3 layers",
+      "Step 2: Select middle layer",
+      "Step 3: Click Export",
+      "Step 4: Select 'Current Layer Only' option",
+      "Step 5: Export as PNG",
+      "Step 6: Verify only selected layer in export",
+      "Step 7: Verify other layers not included"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Batch export layers - Export all layers individually",
+    "steps": [
+      "Step 1: Create project with 5 layers",
+      "Step 2: Click Export",
+      "Step 3: Select 'Export All Layers Individually'",
+      "Step 4: Choose format and settings",
+      "Step 5: Click Export",
+      "Step 6: Verify 5 separate files download",
+      "Step 7: Verify each file contains one layer",
+      "Step 8: Verify filenames indicate layer names"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Export with metadata - EXIF data embedded",
+    "steps": [
+      "Step 1: Generate image with AI",
+      "Step 2: Note prompt used",
+      "Step 3: Export image",
+      "Step 4: Enable 'Include Metadata' option",
+      "Step 5: Download file",
+      "Step 6: Check EXIF data",
+      "Step 7: Verify prompt included",
+      "Step 8: Verify generation settings included"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Zip archive export - Batch download as zip",
+    "steps": [
+      "Step 1: Create project with multiple layers",
+      "Step 2: Click Export",
+      "Step 3: Select 'Export All Layers'",
+      "Step 4: Enable 'Download as Zip' option",
+      "Step 5: Export",
+      "Step 6: Verify single .zip file downloads",
+      "Step 7: Extract and verify all layer files present"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Copy to clipboard - Copy image to clipboard",
+    "steps": [
+      "Step 1: Create or load image",
+      "Step 2: Click 'Copy to Clipboard' button",
+      "Step 3: Verify success notification",
+      "Step 4: Open external image editor",
+      "Step 5: Paste (Cmd+V)",
+      "Step 6: Verify image pasted correctly"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Share link generation - Create shareable link",
+    "steps": [
+      "Step 1: Generate or create image",
+      "Step 2: Click 'Share' button",
+      "Step 3: Click 'Create Share Link'",
+      "Step 4: Verify link generated",
+      "Step 5: Verify link displayed with copy button",
+      "Step 6: Copy link",
+      "Step 7: Open in incognito browser",
+      "Step 8: Verify image accessible"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Share link expiration - Links expire after set time",
+    "steps": [
+      "Step 1: Create share link",
+      "Step 2: Set expiration to 1 hour",
+      "Step 3: Note link URL",
+      "Step 4: Verify link works immediately",
+      "Step 5: Wait past expiration (or manually expire)",
+      "Step 6: Try accessing link",
+      "Step 7: Verify expiration message shown"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Template creation - Create template from project",
+    "steps": [
+      "Step 1: Create project with reusable design",
+      "Step 2: Click 'Save as Template' button",
+      "Step 3: Enter template name and description",
+      "Step 4: Select category 'Social Media'",
+      "Step 5: Add tags",
+      "Step 6: Save template",
+      "Step 7: Navigate to templates gallery",
+      "Step 8: Verify template appears"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Template usage - Use template to create new project",
+    "steps": [
+      "Step 1: Navigate to templates gallery",
+      "Step 2: Browse templates",
+      "Step 3: Click on Instagram post template",
+      "Step 4: Click 'Use Template' button",
+      "Step 5: Verify new project created",
+      "Step 6: Verify template content loaded",
+      "Step 7: Verify fully editable"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Template categories - Templates organized by category",
+    "steps": [
+      "Step 1: Navigate to templates gallery",
+      "Step 2: Verify category filters visible",
+      "Step 3: Click 'Social Media' category",
+      "Step 4: Verify only social media templates shown",
+      "Step 5: Click 'Posters' category",
+      "Step 6: Verify poster templates shown",
+      "Step 7: Click 'All' to show all templates"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Template search - Search templates by keyword",
+    "steps": [
+      "Step 1: Navigate to templates gallery",
+      "Step 2: Type 'Instagram' in search",
+      "Step 3: Verify Instagram templates shown",
+      "Step 4: Verify other templates filtered out",
+      "Step 5: Clear search and verify all return"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Featured templates - Featured templates highlighted",
+    "steps": [
+      "Step 1: Navigate to templates gallery",
+      "Step 2: Verify 'Featured' section at top",
+      "Step 3: Verify featured badge on templates",
+      "Step 4: Verify featured templates high quality",
+      "Step 5: Verify can filter to show only featured"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Asset upload - Upload custom asset to library",
+    "steps": [
+      "Step 1: Navigate to assets library",
+      "Step 2: Click 'Upload Asset' button",
+      "Step 3: Select image file",
+      "Step 4: Add name and tags",
+      "Step 5: Confirm upload",
+      "Step 6: Verify asset appears in library",
+      "Step 7: Verify can be used in projects"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Asset organization - Assets organized by type",
+    "steps": [
+      "Step 1: Navigate to assets library",
+      "Step 2: Verify tabs for Images, Fonts, Shapes, Icons",
+      "Step 3: Click Images tab",
+      "Step 4: Verify only images shown",
+      "Step 5: Click Shapes tab",
+      "Step 6: Verify only shapes shown"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Usage tracking - Generation count tracked",
+    "steps": [
+      "Step 1: Navigate to usage dashboard",
+      "Step 2: Note current generation count",
+      "Step 3: Generate an image",
+      "Step 4: Return to usage dashboard",
+      "Step 5: Verify count increased by 1",
+      "Step 6: Verify generation listed in history"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Usage limits - Warning shown when approaching limit",
+    "steps": [
+      "Step 1: Set usage limit to 10 generations",
+      "Step 2: Generate 8 images",
+      "Step 3: Verify warning appears (80% of limit)",
+      "Step 4: Generate 2 more images",
+      "Step 5: Verify limit reached message",
+      "Step 6: Verify cannot generate more without upgrade"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Usage charts - Daily usage displayed as chart",
+    "steps": [
+      "Step 1: Navigate to usage dashboard",
+      "Step 2: Verify usage chart visible",
+      "Step 3: Verify chart shows daily breakdown",
+      "Step 4: Hover over bars to see details",
+      "Step 5: Verify accurate data displayed",
+      "Step 6: Switch to monthly view and verify"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Cost breakdown - Cost by model displayed",
+    "steps": [
+      "Step 1: Generate images with different models",
+      "Step 2: Navigate to usage dashboard",
+      "Step 3: View cost breakdown section",
+      "Step 4: Verify cost per model shown",
+      "Step 5: Verify total cost calculated",
+      "Step 6: Verify matches actual usage"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Settings modal - Settings can be accessed and changed",
+    "steps": [
+      "Step 1: Click user profile dropdown",
+      "Step 2: Click 'Settings' option",
+      "Step 3: Verify settings modal opens",
+      "Step 4: Verify tabs visible (General, API Keys, Preferences)",
+      "Step 5: Navigate between tabs",
+      "Step 6: Change setting and save",
+      "Step 7: Verify setting persists"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "API key management - Add custom API key",
+    "steps": [
+      "Step 1: Open settings",
+      "Step 2: Navigate to API Keys tab",
+      "Step 3: Click 'Add API Key' button",
+      "Step 4: Select provider 'Replicate'",
+      "Step 5: Enter API key",
+      "Step 6: Save key",
+      "Step 7: Verify key listed (masked)",
+      "Step 8: Verify can test connection"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Default export format - Set default export format",
+    "steps": [
+      "Step 1: Open settings",
+      "Step 2: Navigate to Preferences",
+      "Step 3: Find 'Default Export Format' setting",
+      "Step 4: Change to WebP",
+      "Step 5: Save settings",
+      "Step 6: Export an image",
+      "Step 7: Verify WebP pre-selected by default"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Auto-save interval - Configure auto-save timing",
+    "steps": [
+      "Step 1: Open settings",
+      "Step 2: Find 'Auto-save Interval' setting",
+      "Step 3: Change from 30s to 60s",
+      "Step 4: Save settings",
+      "Step 5: Make edits to project",
+      "Step 6: Verify auto-save happens after 60s, not 30s"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Keyboard shortcuts customization - Change shortcut key",
+    "steps": [
+      "Step 1: Open settings",
+      "Step 2: Navigate to Keyboard Shortcuts",
+      "Step 3: Find 'Brush Tool' shortcut (default B)",
+      "Step 4: Click to edit",
+      "Step 5: Press new key combination",
+      "Step 6: Save changes",
+      "Step 7: Verify new shortcut works",
+      "Step 8: Verify old shortcut no longer works"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Keyboard shortcuts reference - View all shortcuts",
+    "steps": [
+      "Step 1: Press '?' key",
+      "Step 2: Verify shortcuts reference modal opens",
+      "Step 3: Verify all shortcuts listed by category",
+      "Step 4: Verify shortcuts accurate",
+      "Step 5: Search for 'undo' shortcut",
+      "Step 6: Verify search filters list"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Command palette - Open with Cmd+K",
+    "steps": [
+      "Step 1: Press Cmd+K",
+      "Step 2: Verify command palette opens",
+      "Step 3: Verify search input focused",
+      "Step 4: Type 'brightness'",
+      "Step 5: Verify brightness adjustment command shown",
+      "Step 6: Select and verify action executes"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Command palette navigation - Navigate projects",
+    "steps": [
+      "Step 1: Open command palette (Cmd+K)",
+      "Step 2: Type project name",
+      "Step 3: Verify matching projects shown",
+      "Step 4: Select project from list",
+      "Step 5: Verify project opens",
+      "Step 6: Verify quick navigation works"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Command palette AI tools - Run AI tool from palette",
+    "steps": [
+      "Step 1: Load image to canvas",
+      "Step 2: Open command palette",
+      "Step 3: Type 'remove background'",
+      "Step 4: Select command",
+      "Step 5: Verify background removal starts",
+      "Step 6: Verify completes successfully"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Context menu on layer - Right-click layer shows menu",
+    "steps": [
+      "Step 1: Create layer",
+      "Step 2: Right-click on layer in panel",
+      "Step 3: Verify context menu appears",
+      "Step 4: Verify options: Duplicate, Delete, Lock, etc.",
+      "Step 5: Select Duplicate",
+      "Step 6: Verify layer duplicated"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Context menu on canvas - Right-click canvas shows options",
+    "steps": [
+      "Step 1: Navigate to editor",
+      "Step 2: Right-click on canvas",
+      "Step 3: Verify context menu appears",
+      "Step 4: Verify options appropriate to context",
+      "Step 5: Select option and verify executes"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Tooltips - Hover shows helpful tooltips",
+    "steps": [
+      "Step 1: Navigate to editor",
+      "Step 2: Hover over tool icon",
+      "Step 3: Verify tooltip appears after brief delay",
+      "Step 4: Verify tooltip describes tool",
+      "Step 5: Verify keyboard shortcut shown",
+      "Step 6: Move away and verify tooltip disappears"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Tutorial for new users - Interactive tutorial available",
+    "steps": [
+      "Step 1: Visit app as new user",
+      "Step 2: Verify welcome screen appears",
+      "Step 3: Click 'Start Tutorial' button",
+      "Step 4: Follow tutorial steps",
+      "Step 5: Verify interactive highlights work",
+      "Step 6: Complete tutorial",
+      "Step 7: Verify can be accessed again from Help menu"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Error handling - API errors show user-friendly messages",
+    "steps": [
+      "Step 1: Disconnect internet",
+      "Step 2: Try to generate image",
+      "Step 3: Verify network error message shown",
+      "Step 4: Verify message is user-friendly, not technical",
+      "Step 5: Verify retry button available",
+      "Step 6: Reconnect and retry",
+      "Step 7: Verify recovery works"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Error boundary - Errors don't crash entire app",
+    "steps": [
+      "Step 1: Navigate to a page",
+      "Step 2: Trigger error condition (invalid data)",
+      "Step 3: Verify error boundary catches error",
+      "Step 4: Verify fallback UI shown",
+      "Step 5: Verify can navigate to other pages",
+      "Step 6: Verify app still functional"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Rate limiting - Rate limit prevents abuse",
+    "steps": [
+      "Step 1: Make many rapid API requests",
+      "Step 2: Verify rate limit triggered",
+      "Step 3: Verify clear message shown",
+      "Step 4: Verify wait time indicated",
+      "Step 5: Wait for cooldown",
+      "Step 6: Verify requests work again"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Form validation - Invalid inputs prevented",
+    "steps": [
+      "Step 1: Open form (e.g., project creation)",
+      "Step 2: Enter invalid data (e.g., empty name)",
+      "Step 3: Try to submit",
+      "Step 4: Verify validation error shown",
+      "Step 5: Verify submit blocked",
+      "Step 6: Enter valid data",
+      "Step 7: Verify submit succeeds"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Retry logic - Failed operations retry automatically",
+    "steps": [
+      "Step 1: Start operation",
+      "Step 2: Simulate transient network error",
+      "Step 3: Verify automatic retry attempted",
+      "Step 4: Verify retry count shown",
+      "Step 5: Verify eventual success or clear failure message"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Responsive layout - Layout adapts to tablet size",
+    "steps": [
+      "Step 1: Navigate to editor",
+      "Step 2: Resize browser to tablet width (768px)",
+      "Step 3: Take screenshot",
+      "Step 4: Verify panels collapse appropriately",
+      "Step 5: Verify canvas remains usable",
+      "Step 6: Verify no horizontal scrolling required"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Mobile responsiveness - Mobile view works for browsing",
+    "steps": [
+      "Step 1: Resize to mobile width (375px)",
+      "Step 2: Navigate to projects list",
+      "Step 3: Take screenshot",
+      "Step 4: Verify projects display in grid/list",
+      "Step 5: Verify readable and tappable",
+      "Step 6: Verify navigation works"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Loading skeletons - Skeleton loaders during data fetch",
+    "steps": [
+      "Step 1: Navigate to projects list with slow network",
+      "Step 2: Take screenshot during loading",
+      "Step 3: Verify skeleton placeholders shown",
+      "Step 4: Verify layout stable (no content shift)",
+      "Step 5: Verify smooth transition to real content"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Empty states - Delightful empty state when no content",
+    "steps": [
+      "Step 1: Navigate to projects as new user",
+      "Step 2: Take screenshot",
+      "Step 3: Verify empty state illustration shown",
+      "Step 4: Verify helpful message displayed",
+      "Step 5: Verify CTA button to create first project"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Button hover states - Buttons show hover effects",
+    "steps": [
+      "Step 1: Navigate to any page with buttons",
+      "Step 2: Hover over primary button",
+      "Step 3: Take screenshot",
+      "Step 4: Verify hover effect visible (color change, lift, etc.)",
+      "Step 5: Verify smooth transition"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Button loading states - Loading buttons show spinner",
+    "steps": [
+      "Step 1: Click button that triggers async action",
+      "Step 2: Take screenshot during loading",
+      "Step 3: Verify spinner inside button",
+      "Step 4: Verify button disabled during loading",
+      "Step 5: Verify text changes to indicate action"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Toast notifications - Success toast appears and auto-dismisses",
+    "steps": [
+      "Step 1: Perform action that shows success (e.g., save project)",
+      "Step 2: Verify toast notification appears top-right",
+      "Step 3: Take screenshot",
+      "Step 4: Verify success icon and message",
+      "Step 5: Wait 3 seconds",
+      "Step 6: Verify toast auto-dismisses with animation"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Error toast - Error toast shows with appropriate styling",
+    "steps": [
+      "Step 1: Trigger error condition",
+      "Step 2: Verify error toast appears",
+      "Step 3: Take screenshot",
+      "Step 4: Verify red/error color scheme",
+      "Step 5: Verify error icon",
+      "Step 6: Verify descriptive error message"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Modal animations - Modals fade in smoothly",
+    "steps": [
+      "Step 1: Click button to open modal",
+      "Step 2: Observe opening animation",
+      "Step 3: Verify smooth fade-in and scale",
+      "Step 4: Verify backdrop dims smoothly",
+      "Step 5: Close modal",
+      "Step 6: Verify smooth fade-out"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Panel transitions - Panels slide smoothly when opening/closing",
+    "steps": [
+      "Step 1: Click button to collapse left panel",
+      "Step 2: Observe animation",
+      "Step 3: Verify smooth slide transition",
+      "Step 4: Verify canvas adjusts smoothly",
+      "Step 5: Expand panel and verify reverse animation"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Typography consistency - Headings use consistent styles",
+    "steps": [
+      "Step 1: Navigate through multiple pages",
+      "Step 2: Take screenshots of pages with headings",
+      "Step 3: Verify H1 headings consistent",
+      "Step 4: Verify H2, H3 headings consistent",
+      "Step 5: Verify font weights and sizes match design system"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Color contrast - Text has sufficient contrast for readability",
+    "steps": [
+      "Step 1: Navigate to various pages",
+      "Step 2: Use browser accessibility tools",
+      "Step 3: Check contrast ratios for all text",
+      "Step 4: Verify meets WCAG AA standards (4.5:1 for normal text)",
+      "Step 5: Check both dark and light modes"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Icon consistency - Icons use consistent size and style",
+    "steps": [
+      "Step 1: Navigate to toolbar",
+      "Step 2: Take screenshot",
+      "Step 3: Verify all icons same size (e.g., 20px)",
+      "Step 4: Verify all from same icon set (Lucide)",
+      "Step 5: Verify consistent stroke width"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Spacing consistency - Padding and margins consistent",
+    "steps": [
+      "Step 1: Navigate through UI",
+      "Step 2: Inspect spacing between elements",
+      "Step 3: Verify consistent use of spacing scale (4px, 8px, 16px, etc.)",
+      "Step 4: Verify no irregular spacing",
+      "Step 5: Verify alignment consistent"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Border radius consistency - Rounded corners consistent",
+    "steps": [
+      "Step 1: Navigate through UI",
+      "Step 2: Inspect buttons, cards, inputs",
+      "Step 3: Verify consistent border radius values",
+      "Step 4: Verify small elements use small radius",
+      "Step 5: Verify large elements use larger radius appropriately"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Shadow consistency - Shadows used consistently",
+    "steps": [
+      "Step 1: Navigate through UI",
+      "Step 2: Observe cards and elevated elements",
+      "Step 3: Verify shadows consistent for same elevation levels",
+      "Step 4: Verify shadows subtle and professional",
+      "Step 5: Verify no conflicting shadow styles"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Focus states - Keyboard focus indicators visible",
+    "steps": [
+      "Step 1: Navigate page using Tab key",
+      "Step 2: Observe focus indicators",
+      "Step 3: Verify clear focus ring on all interactive elements",
+      "Step 4: Verify focus indicator color contrasts with background",
+      "Step 5: Verify focus order logical"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Disabled state styling - Disabled elements clearly indicated",
+    "steps": [
+      "Step 1: Find disabled button",
+      "Step 2: Take screenshot",
+      "Step 3: Verify reduced opacity",
+      "Step 4: Verify cursor shows not-allowed",
+      "Step 5: Verify cannot be clicked"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Image-to-image generation - Use reference image for generation",
+    "steps": [
+      "Step 1: Open generation modal",
+      "Step 2: Click 'Image to Image' tab",
+      "Step 3: Upload reference image",
+      "Step 4: Enter prompt for modifications",
+      "Step 5: Set strength parameter to 0.7",
+      "Step 6: Generate",
+      "Step 7: Verify result based on reference image",
+      "Step 8: Verify prompt modifications applied"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Style transfer - Apply artistic style to image",
+    "steps": [
+      "Step 1: Load photo to canvas",
+      "Step 2: Select layer",
+      "Step 3: Click 'Style Transfer' AI tool",
+      "Step 4: Select 'Oil Painting' preset style",
+      "Step 5: Set strength to 80%",
+      "Step 6: Apply",
+      "Step 7: Verify image has oil painting style",
+      "Step 8: Verify content preserved"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Custom style transfer - Upload custom style image",
+    "steps": [
+      "Step 1: Open style transfer tool",
+      "Step 2: Select 'Custom Style' option",
+      "Step 3: Upload style reference image",
+      "Step 4: Select content image",
+      "Step 5: Process style transfer",
+      "Step 6: Verify content takes on style of reference",
+      "Step 7: Verify quality acceptable"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Inpainting/object removal - Remove unwanted object",
+    "steps": [
+      "Step 1: Load image with unwanted object",
+      "Step 2: Select 'Object Removal' tool",
+      "Step 3: Draw mask over object to remove",
+      "Step 4: Click 'Remove'",
+      "Step 5: Wait for AI processing",
+      "Step 6: Verify object removed",
+      "Step 7: Verify background filled naturally",
+      "Step 8: Verify no obvious artifacts"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Outpainting - Extend image borders with AI",
+    "steps": [
+      "Step 1: Load image",
+      "Step 2: Select 'Outpaint' tool",
+      "Step 3: Specify expansion: 200px on all sides",
+      "Step 4: Process",
+      "Step 5: Verify image expanded",
+      "Step 6: Verify new areas match existing style",
+      "Step 7: Verify seamless transition",
+      "Step 8: Verify dimensions increased by 400px each dimension"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Face restoration - Enhance low-quality faces",
+    "steps": [
+      "Step 1: Load image with blurry face",
+      "Step 2: Select 'Face Restoration' tool",
+      "Step 3: Identify face automatically or manually",
+      "Step 4: Process enhancement",
+      "Step 5: Verify face quality improved",
+      "Step 6: Verify facial features preserved",
+      "Step 7: Verify natural appearance maintained"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Gradient tool - Apply gradient to layer",
+    "steps": [
+      "Step 1: Create new layer",
+      "Step 2: Select Gradient tool",
+      "Step 3: Choose linear gradient",
+      "Step 4: Set start color to red, end color to blue",
+      "Step 5: Draw gradient line on canvas",
+      "Step 6: Verify smooth gradient from red to blue",
+      "Step 7: Try radial gradient and verify"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Paint bucket fill - Fill area with color",
+    "steps": [
+      "Step 1: Create layer with closed shape",
+      "Step 2: Select Paint Bucket tool",
+      "Step 3: Choose fill color green",
+      "Step 4: Click inside shape",
+      "Step 5: Verify shape filled with green",
+      "Step 6: Verify fill respects boundaries"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Magic wand selection - Color-based selection",
+    "steps": [
+      "Step 1: Load image with distinct colored areas",
+      "Step 2: Select Magic Wand tool",
+      "Step 3: Set tolerance to 30",
+      "Step 4: Click on blue sky area",
+      "Step 5: Verify similar blue pixels selected",
+      "Step 6: Verify selection stops at edges",
+      "Step 7: Adjust tolerance and verify selection changes"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Lasso selection - Freehand selection",
+    "steps": [
+      "Step 1: Load image",
+      "Step 2: Select Lasso tool",
+      "Step 3: Draw freehand selection around object",
+      "Step 4: Close selection loop",
+      "Step 5: Verify selection created along drawn path",
+      "Step 6: Verify can perform operations on selection"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Select all - Select all content on layer",
+    "steps": [
+      "Step 1: Load image to layer",
+      "Step 2: Press Cmd+A",
+      "Step 3: Verify entire layer content selected",
+      "Step 4: Verify selection marquee around entire layer",
+      "Step 5: Press Cmd+D to deselect",
+      "Step 6: Verify selection cleared"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Invert selection - Invert selected area",
+    "steps": [
+      "Step 1: Create selection on layer",
+      "Step 2: Click Edit > Invert Selection",
+      "Step 3: Verify selection inverted",
+      "Step 4: Verify previously selected area now unselected",
+      "Step 5: Verify previously unselected now selected"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Grid overlay - Show/hide grid on canvas",
+    "steps": [
+      "Step 1: Navigate to editor",
+      "Step 2: Click View > Show Grid",
+      "Step 3: Verify grid lines appear on canvas",
+      "Step 4: Verify grid aids alignment",
+      "Step 5: Click View > Hide Grid",
+      "Step 6: Verify grid disappears"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Ruler guides - Show rulers with measurement",
+    "steps": [
+      "Step 1: Click View > Show Rulers",
+      "Step 2: Verify rulers appear on top and left edges",
+      "Step 3: Verify measurements displayed",
+      "Step 4: Verify cursor position indicated on rulers",
+      "Step 5: Drag from ruler to create guide",
+      "Step 6: Verify guide created"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Snap to grid - Elements snap to grid",
+    "steps": [
+      "Step 1: Enable grid display",
+      "Step 2: Enable 'Snap to Grid' option",
+      "Step 3: Move object near grid line",
+      "Step 4: Verify object snaps to grid",
+      "Step 5: Disable snapping",
+      "Step 6: Verify free movement"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Snap to guides - Elements snap to guide lines",
+    "steps": [
+      "Step 1: Create guide line",
+      "Step 2: Enable 'Snap to Guides'",
+      "Step 3: Move object near guide",
+      "Step 4: Verify object snaps to guide",
+      "Step 5: Verify precise alignment"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Canvas rotation - Rotate canvas view (non-destructive)",
+    "steps": [
+      "Step 1: Load image",
+      "Step 2: Use canvas rotation control",
+      "Step 3: Rotate view 45 degrees",
+      "Step 4: Verify canvas rotates visually",
+      "Step 5: Verify image data not rotated (view only)",
+      "Step 6: Reset rotation and verify return to normal"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Mini-map navigator - Mini-map shows full canvas",
+    "steps": [
+      "Step 1: Load large image and zoom in to 300%",
+      "Step 2: Verify mini-map appears (usually bottom-right)",
+      "Step 3: Verify mini-map shows entire canvas",
+      "Step 4: Verify viewport rectangle indicated on mini-map",
+      "Step 5: Click on mini-map to jump to area",
+      "Step 6: Verify viewport moves to clicked area"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Full-screen canvas mode - Hide all panels",
+    "steps": [
+      "Step 1: Navigate to editor",
+      "Step 2: Press F key or click fullscreen button",
+      "Step 3: Verify all panels hidden",
+      "Step 4: Verify only canvas visible",
+      "Step 5: Verify can still use shortcuts",
+      "Step 6: Press F again to exit",
+      "Step 7: Verify panels return"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Pencil tool - Draw precise lines",
+    "steps": [
+      "Step 1: Select Pencil tool",
+      "Step 2: Set size to 2px",
+      "Step 3: Draw line on canvas",
+      "Step 4: Verify hard-edged, precise line",
+      "Step 5: Verify no anti-aliasing blur",
+      "Step 6: Verify suitable for pixel art"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Arrow shape tool - Draw arrow",
+    "steps": [
+      "Step 1: Select Arrow shape tool",
+      "Step 2: Set stroke color and width",
+      "Step 3: Draw arrow on canvas",
+      "Step 4: Verify arrow with proper head",
+      "Step 5: Verify can adjust arrow head size",
+      "Step 6: Verify straight line with arrowhead"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Polygon shape tool - Draw polygon",
+    "steps": [
+      "Step 1: Select Polygon tool",
+      "Step 2: Set number of sides to 6 (hexagon)",
+      "Step 3: Draw polygon",
+      "Step 4: Verify 6-sided shape created",
+      "Step 5: Change to 5 sides",
+      "Step 6: Verify pentagon created"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Line tool - Draw straight line",
+    "steps": [
+      "Step 1: Select Line tool",
+      "Step 2: Set stroke color and width",
+      "Step 3: Click start point",
+      "Step 4: Click end point",
+      "Step 5: Verify straight line drawn",
+      "Step 6: Hold Shift while drawing",
+      "Step 7: Verify line constrained to 45-degree angles"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Brush hardness control - Adjust brush edge softness",
+    "steps": [
+      "Step 1: Select Brush tool",
+      "Step 2: Set hardness to 100% (hard edge)",
+      "Step 3: Draw stroke and note sharp edges",
+      "Step 4: Set hardness to 0% (soft edge)",
+      "Step 5: Draw stroke and note soft, feathered edges",
+      "Step 6: Verify visible difference"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "Custom brush support - Load custom brush",
+    "steps": [
+      "Step 1: Open brush settings",
+      "Step 2: Click 'Import Custom Brush'",
+      "Step 3: Select brush file",
+      "Step 4: Verify brush appears in brush list",
+      "Step 5: Select custom brush",
+      "Step 6: Draw stroke",
+      "Step 7: Verify custom brush pattern applied"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Replace background color - Replace removed background",
+    "steps": [
+      "Step 1: Remove background from image",
+      "Step 2: Click 'Replace Background' option",
+      "Step 3: Select solid color",
+      "Step 4: Choose blue color",
+      "Step 5: Apply",
+      "Step 6: Verify background now blue",
+      "Step 7: Verify subject intact"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Replace background with image - Use image as new background",
+    "steps": [
+      "Step 1: Remove background from subject",
+      "Step 2: Click 'Replace Background'",
+      "Step 3: Select 'Upload Image' option",
+      "Step 4: Upload background image",
+      "Step 5: Adjust positioning",
+      "Step 6: Apply",
+      "Step 7: Verify subject composited on new background",
+      "Step 8: Verify realistic composition"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Replace background with gradient - Gradient background",
+    "steps": [
+      "Step 1: Remove background",
+      "Step 2: Select 'Replace Background'",
+      "Step 3: Choose 'Gradient' option",
+      "Step 4: Set gradient colors",
+      "Step 5: Set gradient direction",
+      "Step 6: Apply",
+      "Step 7: Verify smooth gradient background"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Edge refinement - Refine background removal edges",
+    "steps": [
+      "Step 1: Remove background from image with fine details (hair)",
+      "Step 2: Open edge refinement tool",
+      "Step 3: Adjust edge smoothing",
+      "Step 4: Increase feather amount",
+      "Step 5: Verify edges more natural",
+      "Step 6: Verify fine details preserved better"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Batch upscale - Upscale multiple images at once",
+    "steps": [
+      "Step 1: Navigate to image library",
+      "Step 2: Select 3 images",
+      "Step 3: Click 'Batch Upscale' button",
+      "Step 4: Select 2x upscale",
+      "Step 5: Start batch process",
+      "Step 6: Verify all 3 images queue for upscaling",
+      "Step 7: Wait for completion",
+      "Step 8: Verify all 3 upscaled successfully"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Color grading AI - Apply cinematic color grade",
+    "steps": [
+      "Step 1: Load image",
+      "Step 2: Select 'Color Grading AI' tool",
+      "Step 3: Choose 'Cinematic Teal & Orange' preset",
+      "Step 4: Process",
+      "Step 5: Verify color grade applied",
+      "Step 6: Verify teal shadows, orange highlights",
+      "Step 7: Verify professional look"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Film emulation - Apply film stock look",
+    "steps": [
+      "Step 1: Load image",
+      "Step 2: Open film emulation presets",
+      "Step 3: Select 'Kodak Portra 400' preset",
+      "Step 4: Apply",
+      "Step 5: Verify film-like color and grain",
+      "Step 6: Verify characteristic look of film stock"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Auto white balance - Correct color temperature automatically",
+    "steps": [
+      "Step 1: Load image with color cast",
+      "Step 2: Click 'Auto White Balance'",
+      "Step 3: Verify color cast corrected",
+      "Step 4: Verify neutral whites",
+      "Step 5: Verify natural colors restored"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "HSL color mixer - Adjust specific color ranges",
+    "steps": [
+      "Step 1: Load colorful image",
+      "Step 2: Open HSL color mixer",
+      "Step 3: Select Red color range",
+      "Step 4: Adjust hue to shift reds toward orange",
+      "Step 5: Adjust saturation to make reds more vibrant",
+      "Step 6: Adjust luminance to lighten reds",
+      "Step 7: Verify only red tones affected",
+      "Step 8: Verify other colors unchanged"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Split toning - Different colors for shadows/highlights",
+    "steps": [
+      "Step 1: Load image",
+      "Step 2: Open split toning tool",
+      "Step 3: Set shadow color to blue",
+      "Step 4: Set highlight color to yellow",
+      "Step 5: Adjust balance",
+      "Step 6: Verify shadows tinted blue",
+      "Step 7: Verify highlights tinted yellow"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Exposure compensation - Adjust overall exposure",
+    "steps": [
+      "Step 1: Load underexposed image",
+      "Step 2: Open exposure adjustment",
+      "Step 3: Increase exposure by +1 stop",
+      "Step 4: Verify image brightened",
+      "Step 5: Verify similar to camera exposure adjustment"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Shadows and highlights - Independent adjustment",
+    "steps": [
+      "Step 1: Load high-contrast image",
+      "Step 2: Increase shadows slider",
+      "Step 3: Verify dark areas lightened",
+      "Step 4: Decrease highlights slider",
+      "Step 5: Verify bright areas darkened",
+      "Step 6: Verify midtones relatively unchanged",
+      "Step 7: Verify more detail visible in both extremes"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Whites and blacks control - Set white and black points",
+    "steps": [
+      "Step 1: Load image",
+      "Step 2: Increase whites slider",
+      "Step 3: Verify brightest areas become pure white",
+      "Step 4: Increase blacks slider (making darker)",
+      "Step 5: Verify darkest areas become pure black",
+      "Step 6: Verify increased contrast"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Vibrance adjustment - Smart saturation boost",
+    "steps": [
+      "Step 1: Load image with people",
+      "Step 2: Increase vibrance slider",
+      "Step 3: Verify colors more vivid",
+      "Step 4: Verify skin tones protected (not oversaturated)",
+      "Step 5: Compare with saturation slider",
+      "Step 6: Verify vibrance more intelligent than saturation"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Motion blur effect - Apply motion blur",
+    "steps": [
+      "Step 1: Load image",
+      "Step 2: Apply motion blur filter",
+      "Step 3: Set angle to 45 degrees",
+      "Step 4: Set distance to 20px",
+      "Step 5: Apply",
+      "Step 6: Verify directional blur at 45 degrees",
+      "Step 7: Verify motion effect visible"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Radial blur - Blur radiating from center",
+    "steps": [
+      "Step 1: Load image",
+      "Step 2: Apply radial blur filter",
+      "Step 3: Set center point",
+      "Step 4: Set amount",
+      "Step 5: Apply",
+      "Step 6: Verify blur radiates from center",
+      "Step 7: Verify zoom/motion effect"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Add noise/grain - Film grain effect",
+    "steps": [
+      "Step 1: Load clean image",
+      "Step 2: Apply 'Add Noise' filter",
+      "Step 3: Set amount to 15%",
+      "Step 4: Select monochromatic",
+      "Step 5: Apply",
+      "Step 6: Verify subtle grain added",
+      "Step 7: Verify film-like texture"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Chromatic aberration - Color fringing effect",
+    "steps": [
+      "Step 1: Load image",
+      "Step 2: Apply chromatic aberration effect",
+      "Step 3: Adjust amount",
+      "Step 4: Verify color fringing on edges",
+      "Step 5: Verify red/blue separation visible"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Lens distortion correction - Fix barrel/pincushion distortion",
+    "steps": [
+      "Step 1: Load image with barrel distortion",
+      "Step 2: Apply lens correction filter",
+      "Step 3: Adjust distortion slider",
+      "Step 4: Verify straight lines straightened",
+      "Step 5: Verify distortion corrected"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Primary button styling - CTA buttons have gradient",
+    "steps": [
+      "Step 1: Navigate to page with primary button",
+      "Step 2: Take screenshot",
+      "Step 3: Verify gradient background (purple to blue)",
+      "Step 4: Verify white text",
+      "Step 5: Verify subtle shadow",
+      "Step 6: Verify rounded corners"
+    ],
+    "passes": false
+  },
+  {
+    "category": "style",
+    "description": "Canvas background - Transparent grid visible",
+    "steps": [
+      "Step 1: Navigate to editor",
+      "Step 2: View empty canvas",
+      "Step 3: Take screenshot",
+      "Step 4: Verify transparency checkerboard pattern visible",
+      "Step 5: Verify grid aids seeing transparent areas"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Complete generation workflow - End-to-end image generation to canvas",
+    "steps": [
+      "Step 1: Navigate to editor",
+      "Step 2: Press Cmd+G to open generation modal",
+      "Step 3: Enter prompt: 'A serene mountain lake at sunset'",
+      "Step 4: Select Flux Pro model",
+      "Step 5: Choose 16:9 aspect ratio",
+      "Step 6: Select 'Photorealistic' style preset",
+      "Step 7: Click Generate button",
+      "Step 8: Wait for generation to complete",
+      "Step 9: Verify high-quality image generated",
+      "Step 10: Click 'Use' button to add to canvas",
+      "Step 11: Verify image appears on canvas as new layer",
+      "Step 12: Verify layer thumbnail shows image",
+      "Step 13: Save project with Cmd+S"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Complete editing workflow - Load, edit, enhance, and export",
+    "steps": [
+      "Step 1: Navigate to editor",
+      "Step 2: Upload image via drag and drop",
+      "Step 3: Use Move tool to reposition image",
+      "Step 4: Use Transform (Cmd+T) to resize",
+      "Step 5: Apply brightness adjustment (+20)",
+      "Step 6: Apply contrast adjustment (+15)",
+      "Step 7: Add text layer with title",
+      "Step 8: Format text (font, size, color)",
+      "Step 9: Remove background using AI tool",
+      "Step 10: Add new solid color background",
+      "Step 11: Apply vignette effect",
+      "Step 12: Review in before/after comparison",
+      "Step 13: Export as PNG with high quality",
+      "Step 14: Verify exported file matches canvas"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "Complete project workflow - Create, save, reload, edit",
+    "steps": [
+      "Step 1: Create new project named 'Social Media Post'",
+      "Step 2: Set canvas to 1080x1080 (Instagram)",
+      "Step 3: Generate AI image with prompt",
+      "Step 4: Add image to canvas",
+      "Step 5: Add text overlay",
+      "Step 6: Apply filter preset",
+      "Step 7: Save project (Cmd+S)",
+      "Step 8: Navigate to projects list",
+      "Step 9: Verify project appears with thumbnail",
+      "Step 10: Click to reopen project",
+      "Step 11: Verify all layers and edits intact",
+      "Step 12: Make additional edit",
+      "Step 13: Verify auto-save works after 30 seconds"
+    ],
+    "passes": false
+  }
+]

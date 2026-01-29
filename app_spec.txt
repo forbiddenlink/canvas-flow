@@ -1,0 +1,1448 @@
+<project_specification>
+  <project_name>PixelForge - Professional AI Image Generation & Editing Platform</project_name>
+
+  <overview>
+    Build a professional-grade, all-in-one image generation and editing platform that rivals Canva, Photopea, and 
+    Midjourney combined. The application should provide powerful AI-driven image generation with multiple model 
+    providers, a comprehensive canvas-based editing suite with layer management, and advanced AI enhancement tools 
+    (upscaling, background removal, style transfer). The platform should be production-ready with a polished UI, 
+    comprehensive error handling, and optimal performance for handling up to 4K images.
+  </overview>
+
+  <technology_stack>
+    <api_keys>
+      - You can use API keys located at /tmp/api-key for testing
+      - You will not be allowed to read these files, but you can reference them in code
+      - Support multiple AI providers with fallback mechanisms
+    </api_keys>
+    <frontend>
+      <framework>Next.js 14+ with App Router and TypeScript (strict mode)</framework>
+      <styling>Tailwind CSS with shadcn/ui components</styling>
+      <canvas>Fabric.js for advanced canvas manipulation and layer management</canvas>
+      <state_management>Zustand for global state, React Query for server state</state_management>
+      <forms>React Hook Form with Zod validation</forms>
+      <animations>Framer Motion for smooth transitions</animations>
+      <themes>next-themes for dark/light mode</themes>
+      <port>Development on port 3000, configurable via env</port>
+    </frontend>
+    <backend>
+      <runtime>Next.js server actions and API routes</runtime>
+      <database>PostgreSQL (or SQLite for local development) with Prisma ORM</database>
+      <storage>Local filesystem for MVP (S3-compatible for production)</storage>
+      <authentication>NextAuth.js or Clerk for user management</authentication>
+      <rate_limiting>Upstash Redis or in-memory for development</rate_limiting>
+      <image_processing>Sharp for server-side optimization</image_processing>
+    </backend>
+    <ai_providers>
+      <primary>Replicate API (Flux Pro, SDXL, background removal)</primary>
+      <fallback>fal.ai for fast inference, Stability AI for official models</fallback>
+      <client_side>@imgly/background-removal, browser-based processing</client_side>
+    </ai_providers>
+  </technology_stack>
+
+  <prerequisites>
+    <environment_setup>
+      - Node.js 18+ and npm/pnpm
+      - TypeScript configuration with strict mode
+      - Environment variables for AI API keys
+      - Database setup with Prisma migrations
+      - Next.js project structure with src/ directory
+    </environment_setup>
+  </prerequisites>
+
+  <core_features>
+    <ai_image_generation>
+      - Text-to-image generation with multiple AI models
+      - Model selector: Flux Pro, Flux Dev, SDXL, Stable Diffusion 3
+      - Advanced prompt engineering interface with suggestions
+      - Negative prompts for better control
+      - Style presets: photorealistic, anime, digital art, sketch, oil painting, etc.
+      - Aspect ratio presets: 1:1, 16:9, 9:16, 4:3, custom
+      - Generation parameters: steps, guidance scale, seed control
+      - Batch generation (generate 2-4 variations at once)
+      - Image-to-image generation (upload reference image)
+      - Prompt history and favorites
+      - Real-time generation progress with preview
+      - Cancel generation mid-process
+      - Regenerate with same/modified prompt
+      - Download generated images with metadata (prompt, settings, model)
+      - Generation queue for multiple requests
+      - Cost estimation per generation
+    </ai_image_generation>
+
+
+    <canvas_editor>
+      - Professional canvas-based editor using Fabric.js
+      - Layer management system:
+        - Add/remove/duplicate layers
+        - Show/hide layers
+        - Lock/unlock layers
+        - Reorder layers (drag and drop)
+        - Layer opacity control (0-100%)
+        - Blend modes (normal, multiply, screen, overlay, etc.)
+        - Layer thumbnails
+        - Group/ungroup layers
+      - Selection tools:
+        - Rectangle select
+        - Ellipse select
+        - Lasso/freehand select
+        - Magic wand (color-based selection)
+        - Select all, deselect, invert selection
+      - Transform tools:
+        - Move/pan canvas
+        - Scale with aspect ratio lock
+        - Rotate (free and snap to 90°)
+        - Flip horizontal/vertical
+        - Skew/distort
+        - Crop tool with preset ratios
+      - Drawing tools:
+        - Brush tool with size, opacity, hardness controls
+        - Eraser tool
+        - Pencil tool for precise lines
+        - Paint bucket fill
+        - Gradient tool (linear, radial)
+        - Shape tools (rectangle, circle, polygon, line, arrow)
+        - Custom brushes support
+      - Text layers:
+        - Add text with custom fonts
+        - Font size, weight, style controls
+        - Text color and stroke
+        - Text alignment and spacing
+        - Text effects (shadow, outline, glow)
+        - Vertical and horizontal text
+      - Non-destructive editing:
+        - All edits preserve original
+        - Undo/redo with 50+ step history
+        - Reset to original
+        - Before/after comparison slider
+    </canvas_editor>
+
+    <ai_enhancement_tools>
+      - Background removal:
+        - One-click background removal
+        - API-based (Replicate/ClipDrop) with local fallback (@imgly/background-removal)
+        - Edge refinement controls
+        - Replace background with solid color, gradient, or image
+        - Preserve subject quality
+      - AI upscaling:
+        - 2x, 4x upscaling options
+        - Real-ESRGAN model via Replicate
+        - Preview before applying
+        - Batch upscale multiple images
+      - Object removal/inpainting:
+        - Select objects to remove
+        - AI fills in background naturally
+        - ClipDrop or Stability AI inpainting
+      - Face restoration:
+        - Enhance faces in low-quality images
+        - GFPGAN or CodeFormer models
+        - Preserve facial features
+      - Style transfer:
+        - Apply artistic styles to images
+        - Preset styles or custom style images
+        - Strength control (0-100%)
+      - Smart enhance:
+        - Auto color correction
+        - Auto contrast and brightness
+        - Sharpening and noise reduction
+        - One-click beautification
+      - AI expand/outpaint:
+        - Extend image borders with AI
+        - Match existing style and content
+        - Custom expansion amounts
+      - Color grading AI:
+        - Apply cinematic color grades
+        - Film emulation presets
+        - Auto white balance
+    </ai_enhancement_tools>
+
+    <filters_adjustments>
+      - Basic adjustments:
+        - Brightness (-100 to +100)
+        - Contrast (-100 to +100)
+        - Saturation (-100 to +100)
+        - Hue rotation (0-360°)
+        - Temperature (warm/cool)
+        - Tint (green/magenta)
+        - Exposure compensation
+        - Shadows and highlights
+        - Whites and blacks
+        - Vibrance
+      - Advanced adjustments:
+        - Curves editor (RGB and individual channels)
+        - Levels adjustment
+        - HSL/Color mixer (adjust individual colors)
+        - Color balance (shadows, midtones, highlights)
+        - Split toning
+      - Effects:
+        - Blur: Gaussian, motion, radial, box blur
+        - Sharpen with amount control
+        - Add noise/grain
+        - Vignette (amount, roundness, feather)
+        - Chromatic aberration
+        - Lens distortion correction
+      - Preset filters:
+        - Vintage/retro
+        - Cinematic color grades
+        - Black and white presets
+        - Cross-process
+        - HDR effect
+        - Dramatic
+        - Soft/dreamy
+        - High contrast
+        - Sepia, grayscale
+      - Custom filter creation and saving
+      - Filter strength control
+      - Before/after toggle for all adjustments
+    </filters_adjustments>
+
+    <project_management>
+      - Save projects with all layers and edits
+      - Auto-save every 30 seconds
+      - Project history/versions
+      - Duplicate projects
+      - Rename projects
+      - Delete projects with confirmation
+      - Project thumbnails
+      - Search projects by name/date
+      - Sort projects (date, name, size)
+      - Export project as PSD-like format
+      - Import saved projects
+      - Templates gallery:
+        - Social media templates (Instagram, Twitter, Facebook)
+        - Poster templates
+        - Thumbnail templates
+        - Business card templates
+      - Asset library:
+        - Upload custom assets
+        - Stock photos integration (optional)
+        - Icon libraries
+        - Shape collections
+    </project_management>
+
+    <export_download>
+      - Export formats:
+        - PNG (with transparency)
+        - JPEG (quality slider 1-100)
+        - WebP (modern, smaller files)
+        - SVG (for vector elements)
+        - AVIF (next-gen format)
+      - Resolution options:
+        - Original resolution
+        - Custom width/height
+        - Preset sizes (1080p, 4K, etc.)
+        - Maintain aspect ratio
+      - Export options:
+        - Current layer only
+        - All visible layers merged
+        - Individual layers (batch export)
+        - Transparent background toggle
+      - Metadata preservation:
+        - Include prompt and settings
+        - EXIF data
+        - Creator attribution
+      - Batch download:
+        - Export multiple variations
+        - Zip archive for bulk downloads
+      - Share links (temporary URLs for generated images)
+      - Copy to clipboard functionality
+    </export_download>
+
+    <user_experience>
+      - Keyboard shortcuts (Photoshop-style):
+        - V: Move tool
+        - C: Crop tool
+        - B: Brush tool
+        - E: Eraser
+        - T: Text tool
+        - Z: Zoom
+        - Cmd/Ctrl + Z: Undo
+        - Cmd/Ctrl + Shift + Z: Redo
+        - Cmd/Ctrl + S: Save project
+        - Cmd/Ctrl + D: Duplicate layer
+        - Cmd/Ctrl + T: Transform
+        - Space + Drag: Pan canvas
+        - Delete: Delete layer
+      - Command palette (Cmd/Ctrl + K):
+        - Quick access to all tools
+        - Search filters and effects
+        - Navigate projects
+        - Run AI tools
+      - Drag and drop:
+        - Upload images anywhere on canvas
+        - Drag layers to reorder
+        - Drag to resize/position elements
+        - Drop images from desktop
+      - Context menus:
+        - Right-click on layers
+        - Right-click on canvas
+        - Quick access to common actions
+      - Tooltips and help:
+        - Hover tooltips on all tools
+        - Interactive tutorial for first-time users
+        - Keyboard shortcuts reference (? key)
+        - Video tutorials library
+      - Responsive design:
+        - Desktop-first (primary use case)
+        - Tablet support (basic editing)
+        - Mobile-friendly viewing/browsing
+        - Collapsible panels for small screens
+      - Performance:
+        - Lazy loading of heavy components
+        - Image preview thumbnails
+        - Progressive image loading
+        - Web workers for processing
+        - Optimistic UI updates
+        - Skeleton loaders during operations
+      - Themes:
+        - Light mode
+        - Dark mode (default for designers)
+        - Auto-detect system preference
+        - High contrast mode
+        - Custom accent colors
+    </user_experience>
+
+    <collaboration_sharing>
+      - Share generated images:
+        - Public links with expiration
+        - Embed codes
+        - Social media direct sharing
+      - Export history:
+        - View all past exports
+        - Re-download previous exports
+        - Export analytics
+      - Community gallery (optional):
+        - Share creations publicly
+        - Browse others' work
+        - Like and favorite
+        - Prompt sharing
+      - API access (future):
+        - Personal API keys
+        - Programmatic generation
+        - Webhook notifications
+    </collaboration_sharing>
+
+    <usage_analytics>
+      - Generation credits/tracking:
+        - Track API usage
+        - Monthly limits and warnings
+        - Cost breakdown by model
+        - Usage history charts
+      - Performance metrics:
+        - Generation time tracking
+        - Success/failure rates
+        - Average wait times
+      - User statistics:
+        - Total images generated
+        - Total projects created
+        - Storage used
+        - Most used features
+      - Export analytics:
+        - Most popular export formats
+        - Download counts
+        - File sizes
+    </usage_analytics>
+  </core_features>
+
+  <database_schema>
+    <tables>
+      <users>
+        - id (UUID, primary key)
+        - email (unique, indexed)
+        - name
+        - avatar_url
+        - created_at, updated_at, last_login_at
+        - preferences (JSON: theme, default_export_format, etc.)
+        - subscription_tier (free, pro, enterprise)
+        - api_usage_limit
+        - is_active
+      </users>
+
+      <projects>
+        - id (UUID, primary key)
+        - user_id (foreign key to users)
+        - name
+        - thumbnail_url
+        - canvas_data (JSON: layers, settings, dimensions)
+        - created_at, updated_at, last_edited_at
+        - is_template
+        - is_deleted (soft delete)
+        - width, height
+        - file_size_bytes
+      </projects>
+
+      <project_versions>
+        - id (UUID, primary key)
+        - project_id (foreign key to projects)
+        - version_number
+        - canvas_data (JSON snapshot)
+        - created_at
+        - description
+      </project_versions>
+
+      <generated_images>
+        - id (UUID, primary key)
+        - user_id (foreign key to users)
+        - project_id (foreign key to projects, nullable)
+        - prompt (text)
+        - negative_prompt (text)
+        - model (string: flux-pro, sdxl, etc.)
+        - parameters (JSON: steps, guidance, seed, aspect_ratio, etc.)
+        - image_url
+        - thumbnail_url
+        - width, height
+        - file_size_bytes
+        - generation_time_ms
+        - cost_credits
+        - created_at
+        - is_public
+        - is_favorite
+        - tags (array of strings)
+      </generated_images>
+
+      <ai_operations>
+        - id (UUID, primary key)
+        - user_id (foreign key to users)
+        - image_id (foreign key to generated_images)
+        - operation_type (enum: upscale, background_removal, inpaint, etc.)
+        - input_url
+        - output_url
+        - parameters (JSON)
+        - status (pending, processing, completed, failed)
+        - error_message
+        - processing_time_ms
+        - cost_credits
+        - created_at, completed_at
+      </ai_operations>
+
+      <assets>
+        - id (UUID, primary key)
+        - user_id (foreign key to users)
+        - name
+        - type (enum: image, font, shape, template)
+        - file_url
+        - thumbnail_url
+        - file_size_bytes
+        - metadata (JSON)
+        - created_at
+        - is_public
+        - usage_count
+      </assets>
+
+      <templates>
+        - id (UUID, primary key)
+        - creator_user_id (foreign key to users)
+        - name
+        - description
+        - category (enum: social_media, poster, thumbnail, etc.)
+        - thumbnail_url
+        - canvas_data (JSON)
+        - width, height
+        - is_public
+        - is_featured
+        - usage_count
+        - created_at, updated_at
+        - tags (array)
+      </templates>
+
+      <usage_tracking>
+        - id (UUID, primary key)
+        - user_id (foreign key to users)
+        - operation_type (enum: generation, upscale, background_removal, etc.)
+        - model (string)
+        - credits_used
+        - timestamp
+        - success (boolean)
+        - error_message
+      </usage_tracking>
+
+      <shared_links>
+        - id (UUID, primary key)
+        - user_id (foreign key to users)
+        - image_id (foreign key to generated_images, nullable)
+        - project_id (foreign key to projects, nullable)
+        - share_token (unique, indexed)
+        - expires_at
+        - view_count
+        - created_at
+        - is_active
+      </shared_links>
+
+      <api_keys>
+        - id (UUID, primary key)
+        - user_id (foreign key to users)
+        - key_name
+        - api_key_hash
+        - provider (replicate, fal_ai, stability, etc.)
+        - created_at, last_used_at
+        - is_active
+        - usage_limit
+      </api_keys>
+
+      <generation_queue>
+        - id (UUID, primary key)
+        - user_id (foreign key to users)
+        - prompt
+        - parameters (JSON)
+        - status (queued, processing, completed, failed)
+        - priority
+        - created_at, started_at, completed_at
+        - result_image_id (foreign key to generated_images)
+        - error_message
+      </generation_queue>
+    </tables>
+  </database_schema>
+
+  <api_endpoints_summary>
+    <authentication>
+      - POST /api/auth/register
+      - POST /api/auth/login
+      - POST /api/auth/logout
+      - GET /api/auth/me
+      - PUT /api/auth/profile
+      - POST /api/auth/reset-password
+    </authentication>
+
+    <ai_generation>
+      - POST /api/generate/text-to-image
+      - POST /api/generate/image-to-image
+      - GET /api/generate/status/:jobId
+      - DELETE /api/generate/cancel/:jobId
+      - GET /api/generate/models
+      - GET /api/generate/queue
+      - POST /api/generate/batch
+    </ai_generation>
+
+    <ai_enhancement>
+      - POST /api/enhance/upscale
+      - POST /api/enhance/background-remove
+      - POST /api/enhance/inpaint
+      - POST /api/enhance/outpaint
+      - POST /api/enhance/face-restore
+      - POST /api/enhance/style-transfer
+      - POST /api/enhance/auto-enhance
+      - GET /api/enhance/status/:operationId
+    </ai_enhancement>
+
+    <projects>
+      - GET /api/projects
+      - POST /api/projects
+      - GET /api/projects/:id
+      - PUT /api/projects/:id
+      - DELETE /api/projects/:id (soft delete)
+      - POST /api/projects/:id/duplicate
+      - GET /api/projects/:id/versions
+      - POST /api/projects/:id/versions (create snapshot)
+      - POST /api/projects/:id/restore/:versionId
+      - POST /api/projects/:id/export
+    </projects>
+
+    <images>
+      - GET /api/images (list user's generated images)
+      - GET /api/images/:id
+      - PUT /api/images/:id (update metadata, tags, visibility)
+      - DELETE /api/images/:id
+      - POST /api/images/upload
+      - GET /api/images/:id/download
+      - POST /api/images/:id/favorite
+      - GET /api/images/favorites
+      - POST /api/images/batch-download
+    </images>
+
+    <templates>
+      - GET /api/templates
+      - GET /api/templates/:id
+      - POST /api/templates (create from project)
+      - PUT /api/templates/:id
+      - DELETE /api/templates/:id
+      - GET /api/templates/categories
+      - GET /api/templates/featured
+      - POST /api/templates/:id/use
+    </templates>
+
+    <assets>
+      - GET /api/assets
+      - POST /api/assets/upload
+      - GET /api/assets/:id
+      - DELETE /api/assets/:id
+      - GET /api/assets/fonts
+      - GET /api/assets/shapes
+      - GET /api/assets/icons
+    </assets>
+
+    <sharing>
+      - POST /api/share/create
+      - GET /api/share/:token
+      - DELETE /api/share/:token
+      - PUT /api/share/:token/settings
+      - GET /api/share/:token/stats
+    </sharing>
+
+    <usage>
+      - GET /api/usage/summary
+      - GET /api/usage/daily
+      - GET /api/usage/monthly
+      - GET /api/usage/by-operation
+      - GET /api/usage/credits
+      - GET /api/usage/limits
+    </usage>
+
+    <settings>
+      - GET /api/settings
+      - PUT /api/settings
+      - GET /api/settings/api-keys
+      - POST /api/settings/api-keys
+      - PUT /api/settings/api-keys/:id
+      - DELETE /api/settings/api-keys/:id
+    </settings>
+  </api_endpoints_summary>
+
+  <ui_layout>
+    <main_structure>
+      - Three-panel layout: left sidebar (tools), center (canvas), right sidebar (layers/history)
+      - Top toolbar: file operations, zoom controls, undo/redo, view options
+      - Bottom status bar: zoom level, cursor position, file size, operation status
+      - Floating tool options panel (contextual based on selected tool)
+      - Responsive: panels collapse on smaller screens
+      - Full-screen canvas mode (hide all panels)
+    </main_structure>
+
+    <left_sidebar>
+      - Tool selector:
+        - Generation tools (at top)
+        - Selection tools
+        - Transform tools
+        - Drawing tools
+        - Text tool
+        - Shape tools
+        - AI enhancement tools
+      - Tool options (change based on selected tool)
+      - Quick actions panel
+      - Presets and templates
+      - Collapsible sections
+    </left_sidebar>
+
+    <center_canvas>
+      - Main canvas area with zoom/pan
+      - Canvas background (transparent grid or solid)
+      - Rulers with guides
+      - Snap to grid/guides
+      - Selection indicators
+      - Transform handles
+      - Zoom controls (fit, 100%, zoom in/out)
+      - Mini-map navigator
+      - Canvas rotation control
+    </center_canvas>
+
+    <right_sidebar>
+      - Layers panel:
+        - Layer list with thumbnails
+        - Layer controls (visibility, lock, opacity, blend mode)
+        - Drag to reorder
+        - Context menu per layer
+        - Search/filter layers
+      - History panel:
+        - Undo/redo list
+        - Jump to any history state
+        - Clear history option
+      - Properties panel:
+        - Context-sensitive properties for selected layer/object
+        - Quick adjustments
+      - Adjustments panel:
+        - Filters and effects
+        - Color adjustments
+        - Presets
+      - Tabbed interface for different panels
+    </right_sidebar>
+
+    <top_toolbar>
+      - App logo and name
+      - File menu: New, Open, Save, Export
+      - Edit menu: Undo, Redo, Copy, Paste
+      - View menu: Zoom, Grid, Rulers, Panels
+      - AI menu: Generate, Enhance, Transform
+      - Help menu: Tutorial, Shortcuts, Documentation
+      - User profile dropdown
+      - Credits/usage indicator
+      - Theme toggle
+    </top_toolbar>
+
+    <generation_modal>
+      - Large, centered modal for image generation
+      - Prompt input textarea (large, prominent)
+      - Negative prompt (collapsible)
+      - Model selector with descriptions
+      - Style presets (visual thumbnails)
+      - Advanced options (collapsible):
+        - Steps slider
+        - Guidance scale
+        - Seed input
+        - Aspect ratio selector
+        - Batch count
+      - Generate button (large, clear CTA)
+      - Progress indicator during generation
+      - Preview grid for batch results
+      - Quick actions: use, save, regenerate, edit
+    </generation_modal>
+
+    <modals_dialogs>
+      - Settings modal (tabbed: General, API Keys, Preferences)
+      - Export dialog (format, quality, options)
+      - Template browser
+      - Asset library
+      - Keyboard shortcuts reference
+      - Tutorial overlays
+      - Confirmation dialogs (delete, discard changes)
+      - Error/success toasts (top-right corner)
+    </modals_dialogs>
+  </ui_layout>
+
+  <design_system>
+    <color_palette>
+      - Primary: Purple/Blue gradient (#6366F1 to #8B5CF6) for CTA buttons
+      - Secondary: Teal/Cyan (#14B8A6) for highlights
+      - Background Dark: #0F0F0F (main background in dark mode)
+      - Background Light: #FFFFFF (main background in light mode)
+      - Surface Dark: #1A1A1A (panels in dark mode)
+      - Surface Light: #F9FAFB (panels in light mode)
+      - Text Primary: #E5E7EB (dark mode), #111827 (light mode)
+      - Text Secondary: #9CA3AF (dark mode), #6B7280 (light mode)
+      - Border: #374151 (dark mode), #E5E7EB (light mode)
+      - Accent Colors: Red (#EF4444), Orange (#F97316), Yellow (#EAB308), Green (#10B981)
+      - Canvas Background: #2A2A2A with transparency grid (dark), #E5E7EB with grid (light)
+    </color_palette>
+
+    <typography>
+      - Font Family: Inter (primary), JetBrains Mono (code/technical)
+      - Headings: font-semibold, tracking-tight
+      - Body: font-normal, text-sm or text-base
+      - Labels: text-xs, font-medium, uppercase tracking-wide
+      - Monospace: font-mono for technical values
+      - Line Height: relaxed for readability
+    </typography>
+
+    <components>
+      <buttons>
+        - Primary: Gradient background, white text, shadow, hover lift
+        - Secondary: Border with hover fill
+        - Ghost: Transparent with hover background
+        - Icon buttons: Square/circle, hover background
+        - Sizes: xs, sm, md, lg, xl
+        - Loading states: spinner inside button
+        - Disabled: reduced opacity, cursor-not-allowed
+      </buttons>
+
+      <inputs>
+        - Rounded borders with focus ring (primary color)
+        - Dark/light mode variants
+        - Error states: red border and message
+        - Success states: green border
+        - Helper text below input
+        - Icons inside input fields
+        - Clear button for text inputs
+      </inputs>
+
+      <sliders>
+        - Custom styled track and thumb
+        - Value display on hover
+        - Color-coded for different purposes
+        - Keyboard accessible
+        - Reset to default button
+      </sliders>
+
+      <cards>
+        - Subtle border or shadow
+        - Rounded corners (md: 8px, lg: 12px)
+        - Hover states: border color change or shadow increase
+        - Padding: p-4 to p-6
+        - Dark/light variants
+      </cards>
+
+      <panels>
+        - Collapsible headers
+        - Scroll within panel (not whole page)
+        - Resize handles for flexible layout
+        - Tabs for multiple sections
+        - Search/filter within panels
+      </panels>
+    </components>
+
+    <animations>
+      - Smooth transitions (duration-200 to duration-300)
+      - Fade in for new elements
+      - Slide for panels and modals
+      - Scale for hover states on cards
+      - Progress bars for loading
+      - Skeleton loaders for content
+      - Spinner for processing
+      - Reduced motion support (prefers-reduced-motion)
+    </animations>
+
+    <iconography>
+      - Use Lucide React icons (consistent, modern)
+      - Size variants: 16px, 20px, 24px, 32px
+      - Stroke width: 2px (medium)
+      - All icons should have accessible labels
+    </iconography>
+  </design_system>
+
+
+  <key_interactions>
+    <image_generation_flow>
+      1. User clicks "Generate" button or uses CMD+G shortcut
+      2. Generation modal opens with large prompt textarea
+      3. User enters prompt, optionally adds negative prompt
+      4. Selects model, style preset, and aspect ratio
+      5. Adjusts advanced parameters if needed (steps, guidance, seed)
+      6. Clicks "Generate" button
+      7. Modal shows progress bar and estimated time
+      8. On completion, displays result(s) in grid
+      9. User can: use in project, save to library, regenerate, or tweak settings
+      10. Click "Use" to add image to canvas as new layer
+    </image_generation_flow>
+
+    <canvas_editing_flow>
+      1. Image loads on canvas (from generation or upload)
+      2. User selects tool from left sidebar
+      3. Tool options appear below tool selector
+      4. User performs action on canvas (draw, transform, etc.)
+      5. Action immediately reflected on canvas
+      6. History updates in right sidebar
+      7. Layer thumbnail updates
+      8. Auto-save triggers after 30 seconds of inactivity
+      9. User can undo with CMD+Z or from history panel
+      10. Changes persist in project
+    </canvas_editing_flow>
+
+    <ai_enhancement_flow>
+      1. User selects layer to enhance
+      2. Clicks AI tool from left sidebar (e.g., "Remove Background")
+      3. If applicable, parameters dialog appears
+      4. Confirms action
+      5. Progress indicator shows processing status
+      6. Preview appears before applying (for upscale, filters)
+      7. User accepts or cancels
+      8. If accepted, new layer created with result
+      9. Original layer preserved (non-destructive)
+      10. Can toggle between before/after
+    </ai_enhancement_flow>
+
+    <project_management_flow>
+      1. User works on canvas, edits accumulate
+      2. Auto-save runs every 30s, saving to browser storage
+      3. User can manually save with CMD+S
+      4. Click "Projects" to view all saved projects
+      5. Projects display with thumbnails, names, dates
+      6. Can search, sort, filter projects
+      7. Click project to open and continue editing
+      8. Duplicate project to create variations
+      9. Export project to download all layers
+      10. Delete project (with confirmation)
+    </project_management_flow>
+
+    <export_flow>
+      1. User clicks "Export" or uses CMD+E
+      2. Export dialog opens
+      3. Selects format (PNG, JPEG, WebP, etc.)
+      4. Adjusts quality/compression if applicable
+      5. Chooses resolution (original, scaled, custom)
+      6. Selects what to export (all layers merged, current layer, etc.)
+      7. Optionally includes metadata (prompt, settings)
+      8. Clicks "Download"
+      9. File downloads with appropriate filename
+      10. Export recorded in history
+    </export_flow>
+  </key_interactions>
+
+  <implementation_steps>
+    <step number="1">
+      <title>Project Setup and Foundation</title>
+      <tasks>
+        - Initialize Next.js 14 project with TypeScript and App Router
+        - Set up Tailwind CSS with custom configuration
+        - Install shadcn/ui and configure theme
+        - Set up Prisma with PostgreSQL (or SQLite for dev)
+        - Create database schema and run migrations
+        - Configure environment variables structure
+        - Set up basic authentication with NextAuth
+        - Create project folder structure (src/app, src/components, src/lib, etc.)
+        - Set up ESLint, Prettier, and TypeScript strict mode
+        - Initialize git repository
+        - Create comprehensive README.md with setup instructions
+      </tasks>
+      <tests>
+        - Verify Next.js dev server runs
+        - Verify database connection
+        - Verify Tailwind classes work
+        - Verify TypeScript compilation
+      </tests>
+    </step>
+
+    <step number="2">
+      <title>UI Layout and Navigation</title>
+      <tasks>
+        - Create main layout with three-panel structure
+        - Build responsive header/toolbar
+        - Implement left sidebar with tool selector
+        - Implement right sidebar with tabs (layers, history, adjustments)
+        - Create resizable panels with drag handles
+        - Build collapsible panel functionality
+        - Implement theme toggle (dark/light mode)
+        - Add keyboard shortcut infrastructure
+        - Create command palette (CMD+K) foundation
+        - Build basic routing structure
+        - Add loading states and skeletons
+        - Create error boundary components
+      </tasks>
+      <tests>
+        - Verify layout responsive at all breakpoints
+        - Verify panels resize smoothly
+        - Verify keyboard shortcuts work
+        - Verify theme switches correctly
+      </tests>
+    </step>
+
+    <step number="3">
+      <title>Canvas Editor Core</title>
+      <tasks>
+        - Integrate Fabric.js into Next.js
+        - Create canvas component with initialization
+        - Implement zoom and pan controls
+        - Add grid and ruler overlays
+        - Build selection tools (rectangle, ellipse, lasso)
+        - Implement transform tools (move, scale, rotate)
+        - Create drawing tools (brush, eraser, shapes)
+        - Add text tool with formatting
+        - Implement undo/redo with history management (50 steps)
+        - Build canvas state management with Zustand
+        - Add canvas save/load functionality
+        - Optimize canvas performance (debouncing, RAF)
+      </tasks>
+      <tests>
+        - Verify all tools work correctly
+        - Verify undo/redo doesn't lose state
+        - Verify canvas performance with large images
+        - Verify zoom/pan smooth at all levels
+      </tests>
+    </step>
+
+    <step number="4">
+      <title>Layer Management System</title>
+      <tasks>
+        - Create layers panel UI
+        - Implement layer list with thumbnails
+        - Add layer visibility toggle
+        - Add layer lock functionality
+        - Implement layer opacity slider
+        - Add blend modes dropdown
+        - Build drag-and-drop layer reordering
+        - Implement layer grouping
+        - Add layer duplication
+        - Create layer deletion with undo
+        - Implement layer search/filter
+        - Sync layers with Fabric.js objects
+      </tasks>
+      <tests>
+        - Verify layer reordering updates canvas
+        - Verify opacity changes reflect immediately
+        - Verify blend modes work correctly
+        - Verify deleted layers can be undone
+      </tests>
+    </step>
+
+    <step number="5">
+      <title>AI Image Generation Integration</title>
+      <tasks>
+        - Set up Replicate API client
+        - Create server action for text-to-image generation
+        - Implement streaming/polling for generation status
+        - Build generation modal UI
+        - Add prompt textarea with character count
+        - Implement model selector
+        - Add style presets with visual previews
+        - Create aspect ratio selector
+        - Add advanced parameters (steps, guidance, seed)
+        - Implement batch generation (2-4 images)
+        - Build result preview grid
+        - Add generation queue management
+        - Implement error handling and retry logic
+        - Create generation history tracking
+      </tasks>
+      <tests>
+        - Verify generation completes successfully
+        - Verify streaming status updates work
+        - Verify all parameters affect output correctly
+        - Verify errors handled gracefully
+      </tests>
+    </step>
+
+    <step number="6">
+      <title>Image Upload and Management</title>
+      <tasks>
+        - Implement drag-and-drop image upload
+        - Add file input for selecting images
+        - Create image preview before adding to canvas
+        - Implement image optimization (compression, format conversion)
+        - Build image library/gallery
+        - Add image metadata extraction
+        - Implement thumbnail generation
+        - Create image search and filtering
+        - Add image tagging system
+        - Build image favorites
+        - Implement batch image operations
+      </tasks>
+      <tests>
+        - Verify drag-drop works from desktop
+        - Verify large images handled correctly
+        - Verify thumbnails generate quickly
+        - Verify metadata preserved
+      </tests>
+    </step>
+
+    <step number="7">
+      <title>AI Enhancement Tools</title>
+      <tasks>
+        - Integrate background removal API (Replicate + local fallback)
+        - Implement upscaling (Real-ESRGAN via Replicate)
+        - Add face restoration integration
+        - Build inpainting/object removal
+        - Implement outpainting/expand canvas
+        - Add style transfer
+        - Create auto-enhance (color correction, sharpening)
+        - Build AI tool UI components
+        - Implement progress tracking for AI operations
+        - Add preview-before-apply for all tools
+        - Create non-destructive workflow (new layers)
+        - Optimize API usage with caching
+      </tasks>
+      <tests>
+        - Verify background removal preserves edges
+        - Verify upscaling improves quality
+        - Verify all AI tools complete successfully
+        - Verify original preserved (non-destructive)
+      </tests>
+    </step>
+
+    <step number="8">
+      <title>Filters and Adjustments</title>
+      <tasks>
+        - Implement basic adjustments (brightness, contrast, saturation, hue)
+        - Build curves editor
+        - Add levels adjustment
+        - Create HSL/color mixer
+        - Implement split toning
+        - Build preset filters (vintage, cinematic, B&W, etc.)
+        - Add blur effects (Gaussian, motion, radial)
+        - Implement sharpen filter
+        - Add vignette effect
+        - Create custom filter saving
+        - Build before/after comparison slider
+        - Optimize filter performance (WebGL if possible)
+      </tasks>
+      <tests>
+        - Verify all adjustments apply correctly
+        - Verify filters perform smoothly
+        - Verify before/after comparison works
+        - Verify custom filters save/load correctly
+      </tests>
+    </step>
+
+    <step number="9">
+      <title>Project Management</title>
+      <tasks>
+        - Create projects database schema
+        - Implement project save functionality
+        - Build auto-save with debouncing
+        - Create project loading
+        - Implement project list view with thumbnails
+        - Add project search and filtering
+        - Build project duplication
+        - Implement project deletion (soft delete)
+        - Create project versioning/snapshots
+        - Add project export (JSON with all data)
+        - Implement project import
+        - Build project templates system
+      </tasks>
+      <tests>
+        - Verify auto-save doesn't interrupt work
+        - Verify projects load with all layers intact
+        - Verify search finds projects correctly
+        - Verify export/import maintains data integrity
+      </tests>
+    </step>
+
+    <step number="10">
+      <title>Export and Download</title>
+      <tasks>
+        - Implement PNG export with transparency
+        - Add JPEG export with quality slider
+        - Implement WebP export
+        - Add SVG export for vectors
+        - Create resolution/scaling options
+        - Build batch export functionality
+        - Implement export presets
+        - Add metadata embedding (EXIF)
+        - Create zip archive for batch downloads
+        - Build clipboard copy functionality
+        - Implement share link generation
+        - Add watermarking option
+      </tasks>
+      <tests>
+        - Verify all formats export correctly
+        - Verify quality settings affect file size
+        - Verify metadata preserved in exports
+        - Verify batch export completes for multiple files
+      </tests>
+    </step>
+
+    <step number="11">
+      <title>Templates and Assets</title>
+      <tasks>
+        - Create templates database schema
+        - Build template creation from projects
+        - Implement template gallery UI
+        - Add template categories and search
+        - Create featured templates
+        - Build asset library system
+        - Implement asset upload and management
+        - Add fonts library
+        - Create shapes/icons library
+        - Build template usage tracking
+        - Implement template sharing
+      </tasks>
+      <tests>
+        - Verify templates load correctly
+        - Verify asset library accessible
+        - Verify custom assets upload successfully
+        - Verify templates categorized correctly
+      </tests>
+    </step>
+
+    <step number="12">
+      <title>Usage Tracking and Analytics</title>
+      <tasks>
+        - Create usage tracking database schema
+        - Implement generation tracking
+        - Build API usage monitoring
+        - Create credits/quota system
+        - Implement usage dashboard
+        - Add daily/monthly usage charts
+        - Build cost estimation
+        - Create usage alerts (approaching limits)
+        - Implement usage export/reports
+        - Add operation success/failure tracking
+      </tasks>
+      <tests>
+        - Verify usage tracked accurately
+        - Verify quota limits enforced
+        - Verify charts display correct data
+        - Verify alerts trigger at thresholds
+      </tests>
+    </step>
+
+    <step number="13">
+      <title>Settings and Preferences</title>
+      <tasks>
+        - Create settings modal UI
+        - Implement user preferences storage
+        - Build API key management
+        - Add default export format setting
+        - Implement auto-save interval configuration
+        - Create canvas background options
+        - Build keyboard shortcuts customization
+        - Add accessibility settings
+        - Implement data export/import
+        - Create account management
+        - Build privacy settings
+      </tasks>
+      <tests>
+        - Verify settings persist across sessions
+        - Verify API key validation works
+        - Verify preferences apply correctly
+        - Verify keyboard shortcuts customizable
+      </tests>
+    </step>
+
+    <step number="14">
+      <title>Sharing and Collaboration</title>
+      <tasks>
+        - Implement share link generation
+        - Create public share view (read-only)
+        - Add share link expiration
+        - Build share link analytics (views)
+        - Implement social media sharing
+        - Create embed codes
+        - Add prompt sharing to community
+        - Build community gallery (optional)
+        - Implement like/favorite system
+        - Create attribution/credits
+      </tasks>
+      <tests>
+        - Verify share links accessible
+        - Verify read-only enforcement
+        - Verify expiration works correctly
+        - Verify analytics track views
+      </tests>
+    </step>
+
+    <step number="15">
+      <title>Performance Optimization</title>
+      <tasks>
+        - Implement image lazy loading
+        - Add progressive image loading
+        - Optimize canvas rendering (RAF, debounce)
+        - Implement Web Workers for heavy processing
+        - Add service worker for offline editing
+        - Optimize bundle size (code splitting)
+        - Implement caching strategies
+        - Add loading skeletons everywhere
+        - Optimize database queries
+        - Implement CDN for static assets
+        - Add performance monitoring
+      </tasks>
+      <tests>
+        - Verify Lighthouse score (performance, accessibility, best practices)
+        - Verify canvas maintains 60fps during interactions
+        - Verify large images load progressively
+        - Verify app works offline for basic editing
+      </tests>
+    </step>
+
+    <step number="16">
+      <title>Onboarding and Help</title>
+      <tasks>
+        - Create welcome screen for new users
+        - Build interactive tutorial
+        - Implement contextual tooltips
+        - Add keyboard shortcuts reference modal
+        - Create video tutorial library
+        - Build in-app documentation
+        - Implement example projects
+        - Add sample prompts for generation
+        - Create feature announcements system
+        - Build help center integration
+      </tasks>
+      <tests>
+        - Verify tutorial completes without errors
+        - Verify tooltips appear correctly
+        - Verify shortcuts reference accurate
+        - Verify examples load correctly
+      </tests>
+    </step>
+
+    <step number="17">
+      <title>Error Handling and Validation</title>
+      <tasks>
+        - Implement comprehensive error boundaries
+        - Add API error handling with user-friendly messages
+        - Create form validation with Zod
+        - Implement rate limiting
+        - Add input sanitization
+        - Build retry logic for failed operations
+        - Create error logging system
+        - Implement fallback UI for errors
+        - Add network error detection
+        - Build graceful degradation
+      </tasks>
+      <tests>
+        - Verify errors don't crash app
+        - Verify error messages helpful
+        - Verify rate limiting works
+        - Verify retries happen automatically
+      </tests>
+    </step>
+
+    <step number="18">
+      <title>Testing and Quality Assurance</title>
+      <tasks>
+        - Write unit tests for utilities
+        - Create integration tests for API routes
+        - Implement E2E tests with Playwright (critical flows)
+        - Add visual regression tests
+        - Test accessibility (keyboard navigation, screen readers)
+        - Test cross-browser compatibility
+        - Perform load testing
+        - Test mobile responsiveness
+        - Conduct security audit
+        - Perform user acceptance testing
+      </tasks>
+      <tests>
+        - Verify 80%+ test coverage
+        - Verify E2E tests pass
+        - Verify accessibility audit passes (WCAG 2.1 AA)
+        - Verify no critical security issues
+      </tests>
+    </step>
+
+    <step number="19">
+      <title>Documentation</title>
+      <tasks>
+        - Write comprehensive README.md with setup instructions
+        - Create ARCHITECTURE.md explaining system design
+        - Document all API endpoints in API.md
+        - Create CONTRIBUTING.md for future development
+        - Add inline code comments for complex logic
+        - Document environment variables needed
+        - Create user guide/documentation site
+        - Document deployment process
+        - Create troubleshooting guide
+        - Add changelog
+      </tasks>
+      <tests>
+        - Verify README setup instructions work
+        - Verify all endpoints documented
+        - Verify architecture clear and accurate
+        - Verify env vars complete
+      </tests>
+    </step>
+
+    <step number="20">
+      <title>Deployment and DevOps</title>
+      <tasks>
+        - Set up Vercel project
+        - Configure production environment variables
+        - Set up production database
+        - Configure S3-compatible storage (Cloudflare R2)
+        - Set up Redis for rate limiting
+        - Configure CI/CD pipeline
+        - Set up error tracking (Sentry)
+        - Configure analytics (Vercel Analytics)
+        - Set up monitoring and alerts
+        - Create deployment documentation
+        - Perform production testing
+        - Create rollback procedure
+      </tasks>
+      <tests>
+        - Verify production deployment succeeds
+        - Verify all env vars configured correctly
+        - Verify database migrations run
+        - Verify app works in production
+      </tests>
+    </step>
+  </implementation_steps>
+
+  <success_criteria>
+    <functionality>
+      - Text-to-image generation completes in under 10 seconds
+      - All canvas tools work without bugs
+      - AI enhancements produce quality results
+      - Layer management reliable (no layer loss)
+      - Projects save and load perfectly
+      - Export produces correct file formats
+      - All 200 test features pass
+      - No critical bugs in production
+    </functionality>
+
+    <performance>
+      - Canvas maintains 60fps during interactions
+      - Images up to 4K handled smoothly
+      - Auto-save doesn't interrupt user
+      - API responses under 3 seconds
+      - Lighthouse performance score 90+
+      - Bundle size optimized (< 500KB first load)
+      - Time to interactive under 2 seconds
+      - Works offline for basic editing
+    </performance>
+
+    <user_experience>
+      - Professional, polished UI
+      - Intuitive tool discovery
+      - Smooth animations and transitions
+      - Clear feedback for all actions
+      - Error messages helpful and actionable
+      - Keyboard shortcuts comprehensive
+      - Mobile-responsive (at least viewing)
+      - Accessible to screen readers
+    </user_experience>
+
+    <technical_quality>
+      - TypeScript strict mode (no 'any')
+      - Comprehensive test coverage (80%+)
+      - Clean, maintainable code structure
+      - Proper error handling throughout
+      - Secure API key management
+      - Optimized database queries
+      - No console errors in production
+      - Documentation complete and accurate
+    </technical_quality>
+
+    <design_polish>
+      - Consistent design system
+      - Beautiful typography and spacing
+      - Smooth micro-interactions
+      - Excellent contrast and readability
+      - Professional appearance
+      - Dark mode fully polished
+      - Loading states everywhere
+      - Empty states delightful
+    </design_polish>
+
+    <ai_integration>
+      - Multiple AI providers working
+      - Fallback mechanisms in place
+      - Generation quality excellent
+      - Enhancement tools produce visible improvements
+      - API costs optimized
+      - Rate limiting prevents abuse
+      - Error recovery for failed generations
+      - Streaming/progress indicators accurate
+    </ai_integration>
+  </success_criteria>
+
+  <environment_variables>
+    # AI API Keys (required - get from respective platforms)
+    REPLICATE_API_KEY=your_replicate_api_key_here
+    FAL_AI_API_KEY=your_fal_ai_api_key_here  # Optional, for fallback
+    STABILITY_API_KEY=your_stability_api_key_here  # Optional, for fallback
+    
+    # Database (required)
+    DATABASE_URL=postgresql://user:password@localhost:5432/pixelforge
+    # For development, can use SQLite:
+    # DATABASE_URL=file:./dev.db
+    
+    # Authentication (required)
+    NEXTAUTH_SECRET=your_nextauth_secret_here
+    NEXTAUTH_URL=http://localhost:3000
+    
+    # Storage (required for production, optional for dev)
+    # Use Cloudflare R2 (S3-compatible) or AWS S3
+    STORAGE_ACCESS_KEY=your_storage_access_key
+    STORAGE_SECRET_KEY=your_storage_secret_key
+    STORAGE_BUCKET=pixelforge-images
+    STORAGE_REGION=auto  # For Cloudflare R2
+    STORAGE_ENDPOINT=https://your-account.r2.cloudflarestorage.com
+    
+    # Rate Limiting (required for production, optional for dev)
+    UPSTASH_REDIS_URL=your_upstash_redis_url
+    UPSTASH_REDIS_TOKEN=your_upstash_redis_token
+    
+    # Optional: Analytics and Monitoring
+    NEXT_PUBLIC_VERCEL_ANALYTICS_ID=your_analytics_id
+    SENTRY_DSN=your_sentry_dsn
+    
+    # Optional: Additional AI Providers
+    TOGETHER_AI_API_KEY=your_together_ai_key
+    OPENAI_API_KEY=your_openai_key  # For future GPT-4 Vision integration
+  </environment_variables>
+
+  <additional_instructions>
+    - Create a detailed README.md as you build, documenting setup instructions, API key configuration, and all features
+    - Include error handling for every API call with user-friendly error messages
+    - Implement loading states for all async operations
+    - Add comprehensive TypeScript types (no 'any' types)
+    - Use server actions for all AI API calls to keep keys secure
+    - Implement optimistic UI updates where appropriate
+    - Create reusable components for common patterns
+    - Add JSDoc comments for complex functions
+    - Implement proper accessibility (ARIA labels, keyboard navigation)
+    - Test on multiple browsers (Chrome, Firefox, Safari)
+    - Ensure mobile responsiveness (at minimum for viewing/browsing)
+    - Use Next.js Image component for optimized images
+    - Implement proper SEO meta tags
+    - Add proper error logging for debugging
+    - Create seed data for testing
+    - Build incrementally, test each feature before moving to next
+    - Focus on core functionality first (generation + editing), then enhancements
+    - Make UI professional from the start - design matters for this type of tool
+  </additional_instructions>
+</project_specification>

@@ -1,0 +1,260 @@
+// PixelForge Database Schema
+// This schema defines all database tables for the application
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String   @id @default(uuid())
+  email             String   @unique
+  name              String?
+  avatarUrl         String?  @map("avatar_url")
+  passwordHash      String?  @map("password_hash")
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+  lastLoginAt       DateTime? @map("last_login_at")
+  preferences       String?  // JSON string for SQLite
+  subscriptionTier  String   @default("free") @map("subscription_tier")
+  apiUsageLimit     Int      @default(100) @map("api_usage_limit")
+  isActive          Boolean  @default(true) @map("is_active")
+
+  // Relations
+  projects          Project[]
+  generatedImages   GeneratedImage[]
+  aiOperations      AiOperation[]
+  assets            Asset[]
+  templates         Template[]
+  usageTracking     UsageTracking[]
+  sharedLinks       SharedLink[]
+  apiKeys           ApiKey[]
+  generationQueue   GenerationQueue[]
+
+  @@map("users")
+}
+
+model Project {
+  id             String   @id @default(uuid())
+  userId         String   @map("user_id")
+  name           String
+  thumbnailUrl   String?  @map("thumbnail_url")
+  canvasData     String   @map("canvas_data")  // JSON string for SQLite
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+  lastEditedAt   DateTime @default(now()) @map("last_edited_at")
+  isTemplate     Boolean  @default(false) @map("is_template")
+  isDeleted      Boolean  @default(false) @map("is_deleted")
+  width          Int      @default(1920)
+  height         Int      @default(1080)
+  fileSizeBytes  Int      @default(0) @map("file_size_bytes")
+
+  // Relations
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  versions       ProjectVersion[]
+  sharedLinks    SharedLink[]
+  generatedImages GeneratedImage[]
+
+  @@index([userId])
+  @@index([isDeleted])
+  @@map("projects")
+}
+
+model ProjectVersion {
+  id            String   @id @default(uuid())
+  projectId     String   @map("project_id")
+  versionNumber Int      @map("version_number")
+  canvasData    String   @map("canvas_data")  // JSON string for SQLite
+  createdAt     DateTime @default(now()) @map("created_at")
+  description   String?
+
+  // Relations
+  project       Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+  @@map("project_versions")
+}
+
+model GeneratedImage {
+  id                String   @id @default(uuid())
+  userId            String   @map("user_id")
+  projectId         String?  @map("project_id")
+  prompt            String
+  negativePrompt    String?  @map("negative_prompt")
+  model             String
+  parameters        String  // JSON string for SQLite
+  imageUrl          String   @map("image_url")
+  thumbnailUrl      String?  @map("thumbnail_url")
+  width             Int
+  height            Int
+  fileSizeBytes     Int      @map("file_size_bytes")
+  generationTimeMs  Int      @map("generation_time_ms")
+  costCredits       Float    @map("cost_credits")
+  createdAt         DateTime @default(now()) @map("created_at")
+  isPublic          Boolean  @default(false) @map("is_public")
+  isFavorite        Boolean  @default(false) @map("is_favorite")
+  tags              String?  // Comma-separated for SQLite
+
+  // Relations
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  project           Project? @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  aiOperations      AiOperation[]
+  sharedLinks       SharedLink[]
+
+  @@index([userId])
+  @@index([projectId])
+  @@index([isFavorite])
+  @@map("generated_images")
+}
+
+model AiOperation {
+  id                String   @id @default(uuid())
+  userId            String   @map("user_id")
+  imageId           String?  @map("image_id")
+  operationType     String   @map("operation_type")
+  inputUrl          String   @map("input_url")
+  outputUrl         String?  @map("output_url")
+  parameters        String?  // JSON string for SQLite
+  status            String   @default("pending")
+  errorMessage      String?  @map("error_message")
+  processingTimeMs  Int?     @map("processing_time_ms")
+  costCredits       Float    @default(0) @map("cost_credits")
+  createdAt         DateTime @default(now()) @map("created_at")
+  completedAt       DateTime? @map("completed_at")
+
+  // Relations
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  image             GeneratedImage? @relation(fields: [imageId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([status])
+  @@map("ai_operations")
+}
+
+model Asset {
+  id            String   @id @default(uuid())
+  userId        String   @map("user_id")
+  name          String
+  type          String
+  fileUrl       String   @map("file_url")
+  thumbnailUrl  String?  @map("thumbnail_url")
+  fileSizeBytes Int      @map("file_size_bytes")
+  metadata      String?  // JSON string for SQLite
+  createdAt     DateTime @default(now()) @map("created_at")
+  isPublic      Boolean  @default(false) @map("is_public")
+  usageCount    Int      @default(0) @map("usage_count")
+
+  // Relations
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([type])
+  @@map("assets")
+}
+
+model Template {
+  id            String   @id @default(uuid())
+  creatorUserId String   @map("creator_user_id")
+  name          String
+  description   String?
+  category      String
+  thumbnailUrl  String   @map("thumbnail_url")
+  canvasData    String   @map("canvas_data")  // JSON string for SQLite
+  width         Int
+  height        Int
+  isPublic      Boolean  @default(false) @map("is_public")
+  isFeatured    Boolean  @default(false) @map("is_featured")
+  usageCount    Int      @default(0) @map("usage_count")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+  tags          String?  // Comma-separated for SQLite
+
+  // Relations
+  creator       User     @relation(fields: [creatorUserId], references: [id], onDelete: Cascade)
+
+  @@index([category])
+  @@index([isFeatured])
+  @@map("templates")
+}
+
+model UsageTracking {
+  id            String   @id @default(uuid())
+  userId        String   @map("user_id")
+  operationType String   @map("operation_type")
+  model         String?
+  creditsUsed   Float    @map("credits_used")
+  timestamp     DateTime @default(now())
+  success       Boolean  @default(true)
+  errorMessage  String?  @map("error_message")
+
+  // Relations
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([timestamp])
+  @@map("usage_tracking")
+}
+
+model SharedLink {
+  id         String   @id @default(uuid())
+  userId     String   @map("user_id")
+  imageId    String?  @map("image_id")
+  projectId  String?  @map("project_id")
+  shareToken String   @unique @map("share_token")
+  expiresAt  DateTime? @map("expires_at")
+  viewCount  Int      @default(0) @map("view_count")
+  createdAt  DateTime @default(now()) @map("created_at")
+  isActive   Boolean  @default(true) @map("is_active")
+
+  // Relations
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  image      GeneratedImage? @relation(fields: [imageId], references: [id], onDelete: SetNull)
+  project    Project? @relation(fields: [projectId], references: [id], onDelete: SetNull)
+
+  @@index([shareToken])
+  @@index([userId])
+  @@map("shared_links")
+}
+
+model ApiKey {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  keyName     String   @map("key_name")
+  apiKeyHash  String   @map("api_key_hash")
+  provider    String
+  createdAt   DateTime @default(now()) @map("created_at")
+  lastUsedAt  DateTime? @map("last_used_at")
+  isActive    Boolean  @default(true) @map("is_active")
+  usageLimit  Int?     @map("usage_limit")
+
+  // Relations
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("api_keys")
+}
+
+model GenerationQueue {
+  id              String   @id @default(uuid())
+  userId          String   @map("user_id")
+  prompt          String
+  parameters      String   // JSON string for SQLite
+  status          String   @default("queued")
+  priority        Int      @default(0)
+  createdAt       DateTime @default(now()) @map("created_at")
+  startedAt       DateTime? @map("started_at")
+  completedAt     DateTime? @map("completed_at")
+  resultImageId   String?  @map("result_image_id")
+  errorMessage    String?  @map("error_message")
+
+  // Relations
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([status])
+  @@map("generation_queue")
+}

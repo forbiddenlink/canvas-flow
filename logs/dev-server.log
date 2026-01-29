@@ -1,0 +1,932 @@
+
+> pixelforge@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+  - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 1032ms
+ ✓ Compiled /api/projects/[id] in 113ms (58 modules)
+ PUT /api/projects/18cd991f-40a4-439e-a2bb-d143f0769560 200 in 276ms
+ ○ Compiling /editor ...
+ ✓ Compiled /editor in 942ms (853 modules)
+ GET /editor 200 in 1126ms
+ ✓ Compiled in 148ms (422 modules)
+ ✓ Compiled /api/projects in 118ms (433 modules)
+ POST /api/projects 200 in 153ms
+ PUT /api/projects/fb902637-a58e-4eeb-8504-d0677912e583 200 in 14ms
+ PUT /api/projects/fb902637-a58e-4eeb-8504-d0677912e583 200 in 6ms
+ PUT /api/projects/fb902637-a58e-4eeb-8504-d0677912e583 200 in 12ms
+ PUT /api/projects/fb902637-a58e-4eeb-8504-d0677912e583 200 in 9ms
+ PUT /api/projects/fb902637-a58e-4eeb-8504-d0677912e583 200 in 10ms
+ ✓ Compiled / in 252ms (893 modules)
+ GET / 200 in 329ms
+ GET /editor 200 in 71ms
+ ✓ Compiled /api/projects in 61ms (466 modules)
+ POST /api/projects 200 in 93ms
+ ✓ Compiled /api/generate in 77ms (487 modules)
+ POST /api/generate 200 in 297ms
+ ✓ Compiled /api/generate/status in 53ms (489 modules)
+ GET /api/generate/status?id=xphepabna5rm80cv312rsvcjm0 200 in 111ms
+ GET /api/generate/status?id=xphepabna5rm80cv312rsvcjm0 200 in 76ms
+ GET /api/generate/status?id=xphepabna5rm80cv312rsvcjm0 200 in 57ms
+ GET /api/generate/status?id=xphepabna5rm80cv312rsvcjm0 200 in 80ms
+ GET /api/generate/status?id=xphepabna5rm80cv312rsvcjm0 200 in 48ms
+ GET /api/generate/status?id=xphepabna5rm80cv312rsvcjm0 200 in 44ms
+ ✓ Compiled /api/projects/[id] in 102ms (491 modules)
+ PUT /api/projects/f94efaa0-3e84-47e1-a5ea-dc14f650a6e3 200 in 132ms
+ PUT /api/projects/f94efaa0-3e84-47e1-a5ea-dc14f650a6e3 200 in 8ms
+ PUT /api/projects/f94efaa0-3e84-47e1-a5ea-dc14f650a6e3 200 in 8ms
+ POST /api/generate 200 in 167ms
+ GET /api/generate/status?id=d068e2z1gxrme0cv313ajkh44m 200 in 51ms
+ GET /api/generate/status?id=d068e2z1gxrme0cv313ajkh44m 200 in 56ms
+ GET /api/generate/status?id=d068e2z1gxrme0cv313ajkh44m 200 in 43ms
+ GET /api/generate/status?id=d068e2z1gxrme0cv313ajkh44m 200 in 53ms
+ GET /api/generate/status?id=d068e2z1gxrme0cv313ajkh44m 200 in 58ms
+ POST /api/generate 200 in 156ms
+ GET /api/generate/status?id=ydvc2p1nbnrma0cv313s90fhk8 200 in 43ms
+ ✓ Compiled /api/generate/cancel in 110ms (491 modules)
+ POST /api/generate/cancel 200 in 180ms
+ PUT /api/projects/f94efaa0-3e84-47e1-a5ea-dc14f650a6e3 200 in 11ms
+ PUT /api/projects/f94efaa0-3e84-47e1-a5ea-dc14f650a6e3 200 in 8ms
+ PUT /api/projects/f94efaa0-3e84-47e1-a5ea-dc14f650a6e3 200 in 10ms
+ PUT /api/projects/f94efaa0-3e84-47e1-a5ea-dc14f650a6e3 200 in 9ms
+ PUT /api/projects/f94efaa0-3e84-47e1-a5ea-dc14f650a6e3 200 in 8ms
+ ✓ Compiled in 233ms (861 modules)
+ ✓ Compiled in 91ms (861 modules)
+ ✓ Compiled in 90ms (861 modules)
+ ✓ Compiled in 146ms (441 modules)
+ ✓ Compiled in 87ms (441 modules)
+ ✓ Compiled in 118ms (441 modules)
+ ✓ Compiled in 81ms (441 modules)
+ ✓ Compiled in 72ms (441 modules)
+ ✓ Compiled in 113ms (441 modules)
+ ✓ Compiled in 356ms (875 modules)
+ ✓ Compiled in 206ms (875 modules)
+ ✓ Compiled in 291ms (875 modules)
+ ✓ Compiled in 275ms (875 modules)
+ ✓ Compiled in 426ms (889 modules)
+ ✓ Compiled in 157ms (889 modules)
+ ⨯ ./src/components/canvas/component-creator.tsx:14:1
+Module not found: Can't resolve '@/components/ui/input'
+[0m [90m 12 |[39m } [36mfrom[39m [32m"@/components/ui/dialog"[39m[33m;[39m[0m
+[0m [90m 13 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m"@/components/ui/button"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m [36mimport[39m { [33mInput[39m } [36mfrom[39m [32m"@/components/ui/input"[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m"@/components/ui/label"[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m {[0m
+[0m [90m 17 |[39m   [33mSelect[39m[33m,[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/canvas/component-creator.tsx:14:1
+Module not found: Can't resolve '@/components/ui/input'
+[0m [90m 12 |[39m } [36mfrom[39m [32m"@/components/ui/dialog"[39m[33m;[39m[0m
+[0m [90m 13 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m"@/components/ui/button"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m [36mimport[39m { [33mInput[39m } [36mfrom[39m [32m"@/components/ui/input"[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m"@/components/ui/label"[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m {[0m
+[0m [90m 17 |[39m   [33mSelect[39m[33m,[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/canvas/component-creator.tsx:14:1
+Module not found: Can't resolve '@/components/ui/input'
+[0m [90m 12 |[39m } [36mfrom[39m [32m"@/components/ui/dialog"[39m[33m;[39m[0m
+[0m [90m 13 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m"@/components/ui/button"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m [36mimport[39m { [33mInput[39m } [36mfrom[39m [32m"@/components/ui/input"[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m"@/components/ui/label"[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m {[0m
+[0m [90m 17 |[39m   [33mSelect[39m[33m,[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/canvas/component-creator.tsx:14:1
+Module not found: Can't resolve '@/components/ui/input'
+[0m [90m 12 |[39m } [36mfrom[39m [32m"@/components/ui/dialog"[39m[33m;[39m[0m
+[0m [90m 13 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m"@/components/ui/button"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m [36mimport[39m { [33mInput[39m } [36mfrom[39m [32m"@/components/ui/input"[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m"@/components/ui/label"[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m {[0m
+[0m [90m 17 |[39m   [33mSelect[39m[33m,[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/canvas/component-creator.tsx:14:1
+Module not found: Can't resolve '@/components/ui/input'
+[0m [90m 12 |[39m } [36mfrom[39m [32m"@/components/ui/dialog"[39m[33m;[39m[0m
+[0m [90m 13 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m"@/components/ui/button"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m [36mimport[39m { [33mInput[39m } [36mfrom[39m [32m"@/components/ui/input"[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m"@/components/ui/label"[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m {[0m
+[0m [90m 17 |[39m   [33mSelect[39m[33m,[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/canvas/component-creator.tsx:14:1
+Module not found: Can't resolve '@/components/ui/input'
+[0m [90m 12 |[39m } [36mfrom[39m [32m"@/components/ui/dialog"[39m[33m;[39m[0m
+[0m [90m 13 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m"@/components/ui/button"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m [36mimport[39m { [33mInput[39m } [36mfrom[39m [32m"@/components/ui/input"[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m"@/components/ui/label"[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m {[0m
+[0m [90m 17 |[39m   [33mSelect[39m[33m,[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/canvas/component-creator.tsx:14:1
+Module not found: Can't resolve '@/components/ui/input'
+[0m [90m 12 |[39m } [36mfrom[39m [32m"@/components/ui/dialog"[39m[33m;[39m[0m
+[0m [90m 13 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m"@/components/ui/button"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m [36mimport[39m { [33mInput[39m } [36mfrom[39m [32m"@/components/ui/input"[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m"@/components/ui/label"[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m {[0m
+[0m [90m 17 |[39m   [33mSelect[39m[33m,[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/canvas/component-creator.tsx:14:1
+Module not found: Can't resolve '@/components/ui/input'
+[0m [90m 12 |[39m } [36mfrom[39m [32m"@/components/ui/dialog"[39m[33m;[39m[0m
+[0m [90m 13 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m"@/components/ui/button"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 14 |[39m [36mimport[39m { [33mInput[39m } [36mfrom[39m [32m"@/components/ui/input"[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 15 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m"@/components/ui/label"[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m {[0m
+[0m [90m 17 |[39m   [33mSelect[39m[33m,[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/components/component-library-panel.tsx:7:1
+Module not found: Can't resolve '@/components/ui/scroll-area'
+[0m [90m  5 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m"@/components/ui/button"[39m[33m;[39m[0m
+[0m [90m  6 |[39m [36mimport[39m { [33mInput[39m } [36mfrom[39m [32m"@/components/ui/input"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m { [33mScrollArea[39m } [36mfrom[39m [32m"@/components/ui/scroll-area"[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m  8 |[39m [36mimport[39m { useCanvasStore } [36mfrom[39m [32m"@/store/canvas-store"[39m[33m;[39m[0m
+[0m [90m  9 |[39m [36mimport[39m { componentRegistry } [36mfrom[39m [32m"@/lib/canvas/component-registry"[39m[33m;[39m[0m
+[0m [90m 10 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/components/component-library-panel.tsx:7:1
+Module not found: Can't resolve '@/components/ui/scroll-area'
+[0m [90m  5 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m"@/components/ui/button"[39m[33m;[39m[0m
+[0m [90m  6 |[39m [36mimport[39m { [33mInput[39m } [36mfrom[39m [32m"@/components/ui/input"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m { [33mScrollArea[39m } [36mfrom[39m [32m"@/components/ui/scroll-area"[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m  8 |[39m [36mimport[39m { useCanvasStore } [36mfrom[39m [32m"@/store/canvas-store"[39m[33m;[39m[0m
+[0m [90m  9 |[39m [36mimport[39m { componentRegistry } [36mfrom[39m [32m"@/lib/canvas/component-registry"[39m[33m;[39m[0m
+[0m [90m 10 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/components/component-library-panel.tsx:7:1
+Module not found: Can't resolve '@/components/ui/scroll-area'
+[0m [90m  5 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m"@/components/ui/button"[39m[33m;[39m[0m
+[0m [90m  6 |[39m [36mimport[39m { [33mInput[39m } [36mfrom[39m [32m"@/components/ui/input"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m { [33mScrollArea[39m } [36mfrom[39m [32m"@/components/ui/scroll-area"[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m  8 |[39m [36mimport[39m { useCanvasStore } [36mfrom[39m [32m"@/store/canvas-store"[39m[33m;[39m[0m
+[0m [90m  9 |[39m [36mimport[39m { componentRegistry } [36mfrom[39m [32m"@/lib/canvas/component-registry"[39m[33m;[39m[0m
+[0m [90m 10 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ✓ Compiled in 187ms (915 modules)
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/export/code-export-modal.tsx:17:1
+Module not found: Can't resolve '@/components/ui/tabs'
+[0m [90m 15 |[39m } [36mfrom[39m [32m'@/components/ui/dialog'[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'@/components/ui/button'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 17 |[39m [36mimport[39m { [33mTabs[39m[33m,[39m [33mTabsContent[39m[33m,[39m [33mTabsList[39m[33m,[39m [33mTabsTrigger[39m } [36mfrom[39m [32m'@/components/ui/tabs'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 18 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m'@/components/ui/label'[39m[33m;[39m[0m
+[0m [90m 19 |[39m [36mimport[39m { [33mSwitch[39m } [36mfrom[39m [32m'@/components/ui/switch'[39m[33m;[39m[0m
+[0m [90m 20 |[39m [36mimport[39m { [33mSelect[39m[33m,[39m [33mSelectContent[39m[33m,[39m [33mSelectItem[39m[33m,[39m [33mSelectTrigger[39m[33m,[39m [33mSelectValue[39m } [36mfrom[39m [32m'@/components/ui/select'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/export/code-export-modal.tsx:17:1
+Module not found: Can't resolve '@/components/ui/tabs'
+[0m [90m 15 |[39m } [36mfrom[39m [32m'@/components/ui/dialog'[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'@/components/ui/button'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 17 |[39m [36mimport[39m { [33mTabs[39m[33m,[39m [33mTabsContent[39m[33m,[39m [33mTabsList[39m[33m,[39m [33mTabsTrigger[39m } [36mfrom[39m [32m'@/components/ui/tabs'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 18 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m'@/components/ui/label'[39m[33m;[39m[0m
+[0m [90m 19 |[39m [36mimport[39m { [33mSwitch[39m } [36mfrom[39m [32m'@/components/ui/switch'[39m[33m;[39m[0m
+[0m [90m 20 |[39m [36mimport[39m { [33mSelect[39m[33m,[39m [33mSelectContent[39m[33m,[39m [33mSelectItem[39m[33m,[39m [33mSelectTrigger[39m[33m,[39m [33mSelectValue[39m } [36mfrom[39m [32m'@/components/ui/select'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/export/code-export-modal.tsx:17:1
+Module not found: Can't resolve '@/components/ui/tabs'
+[0m [90m 15 |[39m } [36mfrom[39m [32m'@/components/ui/dialog'[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'@/components/ui/button'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 17 |[39m [36mimport[39m { [33mTabs[39m[33m,[39m [33mTabsContent[39m[33m,[39m [33mTabsList[39m[33m,[39m [33mTabsTrigger[39m } [36mfrom[39m [32m'@/components/ui/tabs'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 18 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m'@/components/ui/label'[39m[33m;[39m[0m
+[0m [90m 19 |[39m [36mimport[39m { [33mSwitch[39m } [36mfrom[39m [32m'@/components/ui/switch'[39m[33m;[39m[0m
+[0m [90m 20 |[39m [36mimport[39m { [33mSelect[39m[33m,[39m [33mSelectContent[39m[33m,[39m [33mSelectItem[39m[33m,[39m [33mSelectTrigger[39m[33m,[39m [33mSelectValue[39m } [36mfrom[39m [32m'@/components/ui/select'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/export/code-export-modal.tsx:17:1
+Module not found: Can't resolve '@/components/ui/tabs'
+[0m [90m 15 |[39m } [36mfrom[39m [32m'@/components/ui/dialog'[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'@/components/ui/button'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 17 |[39m [36mimport[39m { [33mTabs[39m[33m,[39m [33mTabsContent[39m[33m,[39m [33mTabsList[39m[33m,[39m [33mTabsTrigger[39m } [36mfrom[39m [32m'@/components/ui/tabs'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 18 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m'@/components/ui/label'[39m[33m;[39m[0m
+[0m [90m 19 |[39m [36mimport[39m { [33mSwitch[39m } [36mfrom[39m [32m'@/components/ui/switch'[39m[33m;[39m[0m
+[0m [90m 20 |[39m [36mimport[39m { [33mSelect[39m[33m,[39m [33mSelectContent[39m[33m,[39m [33mSelectItem[39m[33m,[39m [33mSelectTrigger[39m[33m,[39m [33mSelectValue[39m } [36mfrom[39m [32m'@/components/ui/select'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/export/code-export-modal.tsx:17:1
+Module not found: Can't resolve '@/components/ui/tabs'
+[0m [90m 15 |[39m } [36mfrom[39m [32m'@/components/ui/dialog'[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'@/components/ui/button'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 17 |[39m [36mimport[39m { [33mTabs[39m[33m,[39m [33mTabsContent[39m[33m,[39m [33mTabsList[39m[33m,[39m [33mTabsTrigger[39m } [36mfrom[39m [32m'@/components/ui/tabs'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 18 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m'@/components/ui/label'[39m[33m;[39m[0m
+[0m [90m 19 |[39m [36mimport[39m { [33mSwitch[39m } [36mfrom[39m [32m'@/components/ui/switch'[39m[33m;[39m[0m
+[0m [90m 20 |[39m [36mimport[39m { [33mSelect[39m[33m,[39m [33mSelectContent[39m[33m,[39m [33mSelectItem[39m[33m,[39m [33mSelectTrigger[39m[33m,[39m [33mSelectValue[39m } [36mfrom[39m [32m'@/components/ui/select'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/export/code-export-modal.tsx:17:1
+Module not found: Can't resolve '@/components/ui/tabs'
+[0m [90m 15 |[39m } [36mfrom[39m [32m'@/components/ui/dialog'[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'@/components/ui/button'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 17 |[39m [36mimport[39m { [33mTabs[39m[33m,[39m [33mTabsContent[39m[33m,[39m [33mTabsList[39m[33m,[39m [33mTabsTrigger[39m } [36mfrom[39m [32m'@/components/ui/tabs'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 18 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m'@/components/ui/label'[39m[33m;[39m[0m
+[0m [90m 19 |[39m [36mimport[39m { [33mSwitch[39m } [36mfrom[39m [32m'@/components/ui/switch'[39m[33m;[39m[0m
+[0m [90m 20 |[39m [36mimport[39m { [33mSelect[39m[33m,[39m [33mSelectContent[39m[33m,[39m [33mSelectItem[39m[33m,[39m [33mSelectTrigger[39m[33m,[39m [33mSelectValue[39m } [36mfrom[39m [32m'@/components/ui/select'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/export/code-export-modal.tsx:17:1
+Module not found: Can't resolve '@/components/ui/tabs'
+[0m [90m 15 |[39m } [36mfrom[39m [32m'@/components/ui/dialog'[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'@/components/ui/button'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 17 |[39m [36mimport[39m { [33mTabs[39m[33m,[39m [33mTabsContent[39m[33m,[39m [33mTabsList[39m[33m,[39m [33mTabsTrigger[39m } [36mfrom[39m [32m'@/components/ui/tabs'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 18 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m'@/components/ui/label'[39m[33m;[39m[0m
+[0m [90m 19 |[39m [36mimport[39m { [33mSwitch[39m } [36mfrom[39m [32m'@/components/ui/switch'[39m[33m;[39m[0m
+[0m [90m 20 |[39m [36mimport[39m { [33mSelect[39m[33m,[39m [33mSelectContent[39m[33m,[39m [33mSelectItem[39m[33m,[39m [33mSelectTrigger[39m[33m,[39m [33mSelectValue[39m } [36mfrom[39m [32m'@/components/ui/select'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/export/code-export-modal.tsx:17:1
+Module not found: Can't resolve '@/components/ui/tabs'
+[0m [90m 15 |[39m } [36mfrom[39m [32m'@/components/ui/dialog'[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'@/components/ui/button'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 17 |[39m [36mimport[39m { [33mTabs[39m[33m,[39m [33mTabsContent[39m[33m,[39m [33mTabsList[39m[33m,[39m [33mTabsTrigger[39m } [36mfrom[39m [32m'@/components/ui/tabs'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 18 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m'@/components/ui/label'[39m[33m;[39m[0m
+[0m [90m 19 |[39m [36mimport[39m { [33mSwitch[39m } [36mfrom[39m [32m'@/components/ui/switch'[39m[33m;[39m[0m
+[0m [90m 20 |[39m [36mimport[39m { [33mSelect[39m[33m,[39m [33mSelectContent[39m[33m,[39m [33mSelectItem[39m[33m,[39m [33mSelectTrigger[39m[33m,[39m [33mSelectValue[39m } [36mfrom[39m [32m'@/components/ui/select'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/export/code-export-modal.tsx:17:1
+Module not found: Can't resolve '@/components/ui/tabs'
+[0m [90m 15 |[39m } [36mfrom[39m [32m'@/components/ui/dialog'[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'@/components/ui/button'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 17 |[39m [36mimport[39m { [33mTabs[39m[33m,[39m [33mTabsContent[39m[33m,[39m [33mTabsList[39m[33m,[39m [33mTabsTrigger[39m } [36mfrom[39m [32m'@/components/ui/tabs'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 18 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m'@/components/ui/label'[39m[33m;[39m[0m
+[0m [90m 19 |[39m [36mimport[39m { [33mSwitch[39m } [36mfrom[39m [32m'@/components/ui/switch'[39m[33m;[39m[0m
+[0m [90m 20 |[39m [36mimport[39m { [33mSelect[39m[33m,[39m [33mSelectContent[39m[33m,[39m [33mSelectItem[39m[33m,[39m [33mSelectTrigger[39m[33m,[39m [33mSelectValue[39m } [36mfrom[39m [32m'@/components/ui/select'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/export/code-export-modal.tsx:17:1
+Module not found: Can't resolve '@/components/ui/tabs'
+[0m [90m 15 |[39m } [36mfrom[39m [32m'@/components/ui/dialog'[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'@/components/ui/button'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 17 |[39m [36mimport[39m { [33mTabs[39m[33m,[39m [33mTabsContent[39m[33m,[39m [33mTabsList[39m[33m,[39m [33mTabsTrigger[39m } [36mfrom[39m [32m'@/components/ui/tabs'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 18 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m'@/components/ui/label'[39m[33m;[39m[0m
+[0m [90m 19 |[39m [36mimport[39m { [33mSwitch[39m } [36mfrom[39m [32m'@/components/ui/switch'[39m[33m;[39m[0m
+[0m [90m 20 |[39m [36mimport[39m { [33mSelect[39m[33m,[39m [33mSelectContent[39m[33m,[39m [33mSelectItem[39m[33m,[39m [33mSelectTrigger[39m[33m,[39m [33mSelectValue[39m } [36mfrom[39m [32m'@/components/ui/select'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/export/code-export-modal.tsx:17:1
+Module not found: Can't resolve '@/components/ui/tabs'
+[0m [90m 15 |[39m } [36mfrom[39m [32m'@/components/ui/dialog'[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'@/components/ui/button'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 17 |[39m [36mimport[39m { [33mTabs[39m[33m,[39m [33mTabsContent[39m[33m,[39m [33mTabsList[39m[33m,[39m [33mTabsTrigger[39m } [36mfrom[39m [32m'@/components/ui/tabs'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 18 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m'@/components/ui/label'[39m[33m;[39m[0m
+[0m [90m 19 |[39m [36mimport[39m { [33mSwitch[39m } [36mfrom[39m [32m'@/components/ui/switch'[39m[33m;[39m[0m
+[0m [90m 20 |[39m [36mimport[39m { [33mSelect[39m[33m,[39m [33mSelectContent[39m[33m,[39m [33mSelectItem[39m[33m,[39m [33mSelectTrigger[39m[33m,[39m [33mSelectValue[39m } [36mfrom[39m [32m'@/components/ui/select'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/export/code-export-modal.tsx:17:1
+Module not found: Can't resolve '@/components/ui/tabs'
+[0m [90m 15 |[39m } [36mfrom[39m [32m'@/components/ui/dialog'[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'@/components/ui/button'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 17 |[39m [36mimport[39m { [33mTabs[39m[33m,[39m [33mTabsContent[39m[33m,[39m [33mTabsList[39m[33m,[39m [33mTabsTrigger[39m } [36mfrom[39m [32m'@/components/ui/tabs'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 18 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m'@/components/ui/label'[39m[33m;[39m[0m
+[0m [90m 19 |[39m [36mimport[39m { [33mSwitch[39m } [36mfrom[39m [32m'@/components/ui/switch'[39m[33m;[39m[0m
+[0m [90m 20 |[39m [36mimport[39m { [33mSelect[39m[33m,[39m [33mSelectContent[39m[33m,[39m [33mSelectItem[39m[33m,[39m [33mSelectTrigger[39m[33m,[39m [33mSelectValue[39m } [36mfrom[39m [32m'@/components/ui/select'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/export/code-export-modal.tsx:17:1
+Module not found: Can't resolve '@/components/ui/tabs'
+[0m [90m 15 |[39m } [36mfrom[39m [32m'@/components/ui/dialog'[39m[33m;[39m[0m
+[0m [90m 16 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'@/components/ui/button'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 17 |[39m [36mimport[39m { [33mTabs[39m[33m,[39m [33mTabsContent[39m[33m,[39m [33mTabsList[39m[33m,[39m [33mTabsTrigger[39m } [36mfrom[39m [32m'@/components/ui/tabs'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 18 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m'@/components/ui/label'[39m[33m;[39m[0m
+[0m [90m 19 |[39m [36mimport[39m { [33mSwitch[39m } [36mfrom[39m [32m'@/components/ui/switch'[39m[33m;[39m[0m
+[0m [90m 20 |[39m [36mimport[39m { [33mSelect[39m[33m,[39m [33mSelectContent[39m[33m,[39m [33mSelectItem[39m[33m,[39m [33mSelectTrigger[39m[33m,[39m [33mSelectValue[39m } [36mfrom[39m [32m'@/components/ui/select'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/export/code-export-modal.tsx:19:1
+Module not found: Can't resolve '@/components/ui/switch'
+[0m [90m 17 |[39m [36mimport[39m { [33mTabs[39m[33m,[39m [33mTabsContent[39m[33m,[39m [33mTabsList[39m[33m,[39m [33mTabsTrigger[39m } [36mfrom[39m [32m'@/components/ui/tabs'[39m[33m;[39m[0m
+[0m [90m 18 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m'@/components/ui/label'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 19 |[39m [36mimport[39m { [33mSwitch[39m } [36mfrom[39m [32m'@/components/ui/switch'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 20 |[39m [36mimport[39m { [33mSelect[39m[33m,[39m [33mSelectContent[39m[33m,[39m [33mSelectItem[39m[33m,[39m [33mSelectTrigger[39m[33m,[39m [33mSelectValue[39m } [36mfrom[39m [32m'@/components/ui/select'[39m[33m;[39m[0m
+[0m [90m 21 |[39m [36mimport[39m { [33mScrollArea[39m } [36mfrom[39m [32m'@/components/ui/scroll-area'[39m[33m;[39m[0m
+[0m [90m 22 |[39m [36mimport[39m { [33mCode[39m[33m,[39m [33mCopy[39m[33m,[39m [33mDownload[39m[33m,[39m [33mFileCode[39m } [36mfrom[39m [32m'lucide-react'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/export/code-export-modal.tsx:19:1
+Module not found: Can't resolve '@/components/ui/switch'
+[0m [90m 17 |[39m [36mimport[39m { [33mTabs[39m[33m,[39m [33mTabsContent[39m[33m,[39m [33mTabsList[39m[33m,[39m [33mTabsTrigger[39m } [36mfrom[39m [32m'@/components/ui/tabs'[39m[33m;[39m[0m
+[0m [90m 18 |[39m [36mimport[39m { [33mLabel[39m } [36mfrom[39m [32m'@/components/ui/label'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 19 |[39m [36mimport[39m { [33mSwitch[39m } [36mfrom[39m [32m'@/components/ui/switch'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 20 |[39m [36mimport[39m { [33mSelect[39m[33m,[39m [33mSelectContent[39m[33m,[39m [33mSelectItem[39m[33m,[39m [33mSelectTrigger[39m[33m,[39m [33mSelectValue[39m } [36mfrom[39m [32m'@/components/ui/select'[39m[33m;[39m[0m
+[0m [90m 21 |[39m [36mimport[39m { [33mScrollArea[39m } [36mfrom[39m [32m'@/components/ui/scroll-area'[39m[33m;[39m[0m
+[0m [90m 22 |[39m [36mimport[39m { [33mCode[39m[33m,[39m [33mCopy[39m[33m,[39m [33mDownload[39m[33m,[39m [33mFileCode[39m } [36mfrom[39m [32m'lucide-react'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/export/code-export-modal.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+ ⨯ ./src/components/ui/scroll-area.tsx:4:1
+Module not found: Can't resolve '@radix-ui/react-scroll-area'
+[0m [90m 2 |[39m[0m
+[0m [90m 3 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mReact[39m [36mfrom[39m [32m"react"[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mScrollAreaPrimitive[39m [36mfrom[39m [32m"@radix-ui/react-scroll-area"[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mimport[39m { cn } [36mfrom[39m [32m"@/lib/utils"[39m[0m
+[0m [90m 7 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/components/component-library-panel.tsx
+./src/app/editor/page.tsx
+[?25h
